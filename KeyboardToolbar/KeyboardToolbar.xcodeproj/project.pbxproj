@@ -7,22 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC0F92E1BA1D63F9B426B106 /* Pods_KeyboardToolbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7469AFD7E0816856C2D28B0A /* Pods_KeyboardToolbar.framework */; };
 		F1333EB129829ADC00E9789D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EB029829ADC00E9789D /* AppDelegate.swift */; };
 		F1333EB329829ADC00E9789D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EB229829ADC00E9789D /* SceneDelegate.swift */; };
 		F1333EB529829ADC00E9789D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EB429829ADC00E9789D /* ViewController.swift */; };
 		F1333EB829829ADC00E9789D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1333EB629829ADC00E9789D /* Main.storyboard */; };
 		F1333EBA29829ADE00E9789D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1333EB929829ADE00E9789D /* Assets.xcassets */; };
 		F1333EBD29829ADE00E9789D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1333EBB29829ADE00E9789D /* LaunchScreen.storyboard */; };
-		F1333EC52982A4B100E9789D /* AtomicArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EC42982A4B100E9789D /* AtomicArray.swift */; };
 		F1333EC72982ACCA00E9789D /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EC62982ACCA00E9789D /* PhotoService.swift */; };
 		F1333EC92982B20A00E9789D /* CustomToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EC82982B20A00E9789D /* CustomToolbarView.swift */; };
 		F1333ECB2982B21500E9789D /* CustomToolbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1333ECA2982B21500E9789D /* CustomToolbarView.xib */; };
 		F1333ECE2982B26600E9789D /* CustomToolbarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333ECC2982B26600E9789D /* CustomToolbarViewCell.swift */; };
 		F1333ECF2982B26600E9789D /* CustomToolbarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1333ECD2982B26600E9789D /* CustomToolbarViewCell.xib */; };
 		F1333ED12982BAB800E9789D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333ED02982BAB800E9789D /* UIView+Extension.swift */; };
+		F16FD0F529839C29002DEB14 /* AtomicArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD0F429839C29002DEB14 /* AtomicArray.swift */; };
+		F16FD0F72983AD1E002DEB14 /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD0F62983AD1E002DEB14 /* ViewControllerVM.swift */; };
+		F16FD1032983D308002DEB14 /* MediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1022983D308002DEB14 /* MediaPicker.swift */; };
+		F16FD1052983D3C9002DEB14 /* UIWindow+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1042983D3C9002DEB14 /* UIWindow+Extension.swift */; };
+		F16FD1082983DF87002DEB14 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1072983DF87002DEB14 /* ApiServices.swift */; };
+		F16FD10E2983DFB6002DEB14 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1092983DFB6002DEB14 /* NetworkRequest.swift */; };
+		F16FD10F2983DFB6002DEB14 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD10A2983DFB6002DEB14 /* CustomLoader.swift */; };
+		F16FD1102983DFB6002DEB14 /* APIResultValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD10B2983DFB6002DEB14 /* APIResultValidator.swift */; };
+		F16FD1112983DFB6002DEB14 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD10C2983DFB6002DEB14 /* Reachability.swift */; };
+		F16FD1122983DFB6002DEB14 /* AlamofireNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD10D2983DFB6002DEB14 /* AlamofireNetworkManager.swift */; };
+		F16FD1152983E160002DEB14 /* LocalizedStringEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1142983E160002DEB14 /* LocalizedStringEnum.swift */; };
+		F16FD1172983E173002DEB14 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F16FD1162983E173002DEB14 /* Localizable.strings */; };
+		F16FD11A2983E219002DEB14 /* UploadImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1192983E219002DEB14 /* UploadImageModel.swift */; };
+		F16FD11C2983E23C002DEB14 /* JSONEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD11B2983E23C002DEB14 /* JSONEncoder+Extension.swift */; };
+		F16FD11E2983E2B4002DEB14 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD11D2983E2B4002DEB14 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7469AFD7E0816856C2D28B0A /* Pods_KeyboardToolbar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardToolbar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78F158309B9D0397D245362F /* Pods-KeyboardToolbar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardToolbar.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardToolbar/Pods-KeyboardToolbar.debug.xcconfig"; sourceTree = "<group>"; };
+		C42BCA57B4926D957DB651EA /* Pods-KeyboardToolbar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardToolbar.release.xcconfig"; path = "Target Support Files/Pods-KeyboardToolbar/Pods-KeyboardToolbar.release.xcconfig"; sourceTree = "<group>"; };
 		F1333EAD29829ADC00E9789D /* KeyboardToolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardToolbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1333EB029829ADC00E9789D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1333EB229829ADC00E9789D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,13 +49,27 @@
 		F1333EB929829ADE00E9789D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1333EBC29829ADE00E9789D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1333EBE29829ADE00E9789D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1333EC42982A4B100E9789D /* AtomicArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicArray.swift; sourceTree = "<group>"; };
 		F1333EC62982ACCA00E9789D /* PhotoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoService.swift; sourceTree = "<group>"; };
 		F1333EC82982B20A00E9789D /* CustomToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbarView.swift; sourceTree = "<group>"; };
 		F1333ECA2982B21500E9789D /* CustomToolbarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomToolbarView.xib; sourceTree = "<group>"; };
 		F1333ECC2982B26600E9789D /* CustomToolbarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbarViewCell.swift; sourceTree = "<group>"; };
 		F1333ECD2982B26600E9789D /* CustomToolbarViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomToolbarViewCell.xib; sourceTree = "<group>"; };
 		F1333ED02982BAB800E9789D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F16FD0F429839C29002DEB14 /* AtomicArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicArray.swift; sourceTree = "<group>"; };
+		F16FD0F62983AD1E002DEB14 /* ViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVM.swift; sourceTree = "<group>"; };
+		F16FD1022983D308002DEB14 /* MediaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPicker.swift; sourceTree = "<group>"; };
+		F16FD1042983D3C9002DEB14 /* UIWindow+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIWindow+Extension.swift"; sourceTree = "<group>"; };
+		F16FD1072983DF87002DEB14 /* ApiServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServices.swift; sourceTree = "<group>"; };
+		F16FD1092983DFB6002DEB14 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		F16FD10A2983DFB6002DEB14 /* CustomLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
+		F16FD10B2983DFB6002DEB14 /* APIResultValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResultValidator.swift; sourceTree = "<group>"; };
+		F16FD10C2983DFB6002DEB14 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F16FD10D2983DFB6002DEB14 /* AlamofireNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireNetworkManager.swift; sourceTree = "<group>"; };
+		F16FD1142983E160002DEB14 /* LocalizedStringEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedStringEnum.swift; sourceTree = "<group>"; };
+		F16FD1162983E173002DEB14 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F16FD1192983E219002DEB14 /* UploadImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageModel.swift; sourceTree = "<group>"; };
+		F16FD11B2983E23C002DEB14 /* JSONEncoder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extension.swift"; sourceTree = "<group>"; };
+		F16FD11D2983E2B4002DEB14 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +77,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC0F92E1BA1D63F9B426B106 /* Pods_KeyboardToolbar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18D725E3EF45D72E037B199C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7469AFD7E0816856C2D28B0A /* Pods_KeyboardToolbar.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A78E48CE45F587B0D2E71072 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78F158309B9D0397D245362F /* Pods-KeyboardToolbar.debug.xcconfig */,
+				C42BCA57B4926D957DB651EA /* Pods-KeyboardToolbar.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F1333EA429829ADC00E9789D = {
 			isa = PBXGroup;
 			children = (
 				F1333EAF29829ADC00E9789D /* KeyboardToolbar */,
 				F1333EAE29829ADC00E9789D /* Products */,
+				A78E48CE45F587B0D2E71072 /* Pods */,
+				18D725E3EF45D72E037B199C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,22 +122,140 @@
 		F1333EAF29829ADC00E9789D /* KeyboardToolbar */ = {
 			isa = PBXGroup;
 			children = (
+				F16FD1182983E20B002DEB14 /* Model */,
+				F16FD1132983DFC5002DEB14 /* Network */,
+				F16FD1062983DF7C002DEB14 /* ApiServices */,
+				F16FD0F82983ADBD002DEB14 /* AppLifeCycle */,
+				F16FD0FA2983ADDB002DEB14 /* View */,
+				F16FD0FB2983ADEF002DEB14 /* ViewModel */,
+				F16FD0FD2983AE14002DEB14 /* HelperClasses */,
+				F16FD1012983AE88002DEB14 /* Resources */,
+			);
+			path = KeyboardToolbar;
+			sourceTree = "<group>";
+		};
+		F16FD0F82983ADBD002DEB14 /* AppLifeCycle */ = {
+			isa = PBXGroup;
+			children = (
 				F1333EB029829ADC00E9789D /* AppDelegate.swift */,
 				F1333EB229829ADC00E9789D /* SceneDelegate.swift */,
+			);
+			path = AppLifeCycle;
+			sourceTree = "<group>";
+		};
+		F16FD0F92983ADCB002DEB14 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F16FD0FC2983AE05002DEB14 /* Main */,
+				F16FD1002983AE65002DEB14 /* Subviews */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F16FD0FA2983ADDB002DEB14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F1333EB629829ADC00E9789D /* Main.storyboard */,
+				F16FD0F92983ADCB002DEB14 /* ViewControllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F16FD0FB2983ADEF002DEB14 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F16FD0F62983AD1E002DEB14 /* ViewControllerVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F16FD0FC2983AE05002DEB14 /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				F1333EB429829ADC00E9789D /* ViewController.swift */,
-				F1333EC42982A4B100E9789D /* AtomicArray.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F16FD0FD2983AE14002DEB14 /* HelperClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F16FD0FE2983AE25002DEB14 /* Extensions */,
+				F16FD0F429839C29002DEB14 /* AtomicArray.swift */,
 				F1333EC62982ACCA00E9789D /* PhotoService.swift */,
+				F16FD1022983D308002DEB14 /* MediaPicker.swift */,
+				F16FD1142983E160002DEB14 /* LocalizedStringEnum.swift */,
+			);
+			path = HelperClasses;
+			sourceTree = "<group>";
+		};
+		F16FD0FE2983AE25002DEB14 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F16FD11D2983E2B4002DEB14 /* Date+Extension.swift */,
+				F16FD11B2983E23C002DEB14 /* JSONEncoder+Extension.swift */,
+				F16FD1042983D3C9002DEB14 /* UIWindow+Extension.swift */,
 				F1333ED02982BAB800E9789D /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F16FD0FF2983AE46002DEB14 /* CustomToolbar */ = {
+			isa = PBXGroup;
+			children = (
 				F1333EC82982B20A00E9789D /* CustomToolbarView.swift */,
 				F1333ECA2982B21500E9789D /* CustomToolbarView.xib */,
 				F1333ECC2982B26600E9789D /* CustomToolbarViewCell.swift */,
 				F1333ECD2982B26600E9789D /* CustomToolbarViewCell.xib */,
-				F1333EB629829ADC00E9789D /* Main.storyboard */,
+			);
+			path = CustomToolbar;
+			sourceTree = "<group>";
+		};
+		F16FD1002983AE65002DEB14 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				F16FD0FF2983AE46002DEB14 /* CustomToolbar */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		F16FD1012983AE88002DEB14 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F16FD1162983E173002DEB14 /* Localizable.strings */,
 				F1333EB929829ADE00E9789D /* Assets.xcassets */,
 				F1333EBB29829ADE00E9789D /* LaunchScreen.storyboard */,
 				F1333EBE29829ADE00E9789D /* Info.plist */,
 			);
-			path = KeyboardToolbar;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F16FD1062983DF7C002DEB14 /* ApiServices */ = {
+			isa = PBXGroup;
+			children = (
+				F16FD1072983DF87002DEB14 /* ApiServices.swift */,
+			);
+			path = ApiServices;
+			sourceTree = "<group>";
+		};
+		F16FD1132983DFC5002DEB14 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F16FD10D2983DFB6002DEB14 /* AlamofireNetworkManager.swift */,
+				F16FD10B2983DFB6002DEB14 /* APIResultValidator.swift */,
+				F16FD10A2983DFB6002DEB14 /* CustomLoader.swift */,
+				F16FD1092983DFB6002DEB14 /* NetworkRequest.swift */,
+				F16FD10C2983DFB6002DEB14 /* Reachability.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		F16FD1182983E20B002DEB14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F16FD1192983E219002DEB14 /* UploadImageModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,9 +265,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F1333EC129829ADE00E9789D /* Build configuration list for PBXNativeTarget "KeyboardToolbar" */;
 			buildPhases = (
+				91CC16D51CF85D8C4649A6CE /* [CP] Check Pods Manifest.lock */,
 				F1333EA929829ADC00E9789D /* Sources */,
 				F1333EAA29829ADC00E9789D /* Frameworks */,
 				F1333EAB29829ADC00E9789D /* Resources */,
+				077D854C7F2A681D753B7969 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -147,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1333EBD29829ADE00E9789D /* LaunchScreen.storyboard in Resources */,
+				F16FD1172983E173002DEB14 /* Localizable.strings in Resources */,
 				F1333EBA29829ADE00E9789D /* Assets.xcassets in Resources */,
 				F1333EB829829ADC00E9789D /* Main.storyboard in Resources */,
 				F1333ECB2982B21500E9789D /* CustomToolbarView.xib in Resources */,
@@ -156,19 +329,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		077D854C7F2A681D753B7969 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeyboardToolbar/Pods-KeyboardToolbar-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KeyboardToolbar/Pods-KeyboardToolbar-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KeyboardToolbar/Pods-KeyboardToolbar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91CC16D51CF85D8C4649A6CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KeyboardToolbar-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F1333EA929829ADC00E9789D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F16FD10E2983DFB6002DEB14 /* NetworkRequest.swift in Sources */,
+				F16FD0F529839C29002DEB14 /* AtomicArray.swift in Sources */,
+				F16FD0F72983AD1E002DEB14 /* ViewControllerVM.swift in Sources */,
+				F16FD1032983D308002DEB14 /* MediaPicker.swift in Sources */,
 				F1333EC72982ACCA00E9789D /* PhotoService.swift in Sources */,
-				F1333EC52982A4B100E9789D /* AtomicArray.swift in Sources */,
+				F16FD10F2983DFB6002DEB14 /* CustomLoader.swift in Sources */,
+				F16FD1052983D3C9002DEB14 /* UIWindow+Extension.swift in Sources */,
 				F1333ED12982BAB800E9789D /* UIView+Extension.swift in Sources */,
 				F1333EB529829ADC00E9789D /* ViewController.swift in Sources */,
+				F16FD1152983E160002DEB14 /* LocalizedStringEnum.swift in Sources */,
+				F16FD1102983DFB6002DEB14 /* APIResultValidator.swift in Sources */,
+				F16FD11E2983E2B4002DEB14 /* Date+Extension.swift in Sources */,
 				F1333EC92982B20A00E9789D /* CustomToolbarView.swift in Sources */,
+				F16FD11A2983E219002DEB14 /* UploadImageModel.swift in Sources */,
+				F16FD1082983DF87002DEB14 /* ApiServices.swift in Sources */,
 				F1333ECE2982B26600E9789D /* CustomToolbarViewCell.swift in Sources */,
 				F1333EB129829ADC00E9789D /* AppDelegate.swift in Sources */,
+				F16FD11C2983E23C002DEB14 /* JSONEncoder+Extension.swift in Sources */,
+				F16FD1112983DFB6002DEB14 /* Reachability.swift in Sources */,
 				F1333EB329829ADC00E9789D /* SceneDelegate.swift in Sources */,
+				F16FD1122983DFB6002DEB14 /* AlamofireNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,14 +538,17 @@
 		};
 		F1333EC229829ADE00E9789D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78F158309B9D0397D245362F /* Pods-KeyboardToolbar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A33J3GCRDB;
+				DEVELOPMENT_TEAM = L4F54NJDC9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KeyboardToolbar/Info.plist;
+				INFOPLIST_FILE = KeyboardToolbar/Resources/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App needs access to your camera for capturing and uploading the photos on server";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App needs access to your photos for uploading selected photos on server";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -329,27 +560,30 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tech.KeyboardToolbar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keyboardToolbarApp.tech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		F1333EC329829ADE00E9789D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C42BCA57B4926D957DB651EA /* Pods-KeyboardToolbar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A33J3GCRDB;
+				DEVELOPMENT_TEAM = L4F54NJDC9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = KeyboardToolbar/Info.plist;
+				INFOPLIST_FILE = KeyboardToolbar/Resources/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "App needs access to your camera for capturing and uploading the photos on server";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "App needs access to your photos for uploading selected photos on server";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -361,14 +595,14 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.tech.KeyboardToolbar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.keyboardToolbarApp.tech;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

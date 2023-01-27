@@ -1,0 +1,12 @@
+/* 
+  LocalizedString.strings
+*/
+
+"appName" = "KeyboardToolbar";
+"networkNotReachable" = "Network is not reachable";
+"somethingWentWrong" = "Something went wrong";
+
+"ok" = "Ok";
+"no" = "No";
+"yes" = "Yes";
+"cancel" = "Cancel";

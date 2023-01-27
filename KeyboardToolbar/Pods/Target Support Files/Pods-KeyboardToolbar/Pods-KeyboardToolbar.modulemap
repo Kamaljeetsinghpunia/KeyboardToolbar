@@ -1,0 +1,6 @@
+framework module Pods_KeyboardToolbar {
+  umbrella header "Pods-KeyboardToolbar-umbrella.h"
+
+  export *
+  module * { export * }
+}

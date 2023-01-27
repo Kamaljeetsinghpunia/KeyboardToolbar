@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "3D881288-6142-4D73-8B4B-13FFD6EB119D"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A399EC3-08F6-4563-AE15-188CDCF244C4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KeyboardToolbar/Network/APIResultValidator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "validateResponse(statusCode:response:completionBlock:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9A399EC3-08F6-4563-AE15-188CDCF244C4 - 3d65d75b3a53360c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KeyboardToolbar.APIDataResultValidator.validateResponse(statusCode: Swift.Int, response: Swift.Optional&lt;Any&gt;, completionBlock: (Swift.Result&lt;KeyboardToolbar.ApiResponseSuccessBlock, KeyboardToolbar.ApiResponseErrorBlock&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "KeyboardToolbar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kamalpunia/Documents/GitHub/KeyboardToolbar/KeyboardToolbar/KeyboardToolbar/Network/APIResultValidator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "9A399EC3-08F6-4563-AE15-188CDCF244C4 - 3d65d75b3a53360c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KeyboardToolbar.APIDataResultValidator.validateResponse(statusCode: Swift.Int, response: Swift.Optional&lt;Any&gt;, completionBlock: (Swift.Result&lt;KeyboardToolbar.ApiResponseSuccessBlock, KeyboardToolbar.ApiResponseErrorBlock&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "KeyboardToolbar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kamalpunia/Documents/GitHub/KeyboardToolbar/KeyboardToolbar/KeyboardToolbar/Network/APIResultValidator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "372">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "556CB995-777F-4461-B9AE-F9197D0355C2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KeyboardToolbar/View/ViewControllers/Main/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "mediaPicker(_:didChooseImage:imageName:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD426C40-45B0-49D0-B68D-2A7359B5C0C4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KeyboardToolbar/HelperClasses/MediaPicker.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DD426C40-45B0-49D0-B68D-2A7359B5C0C4 - a9b089c3a34fe438"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KeyboardToolbar.MediaPicker.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "KeyboardToolbar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kamalpunia/Documents/GitHub/KeyboardToolbar/KeyboardToolbar/KeyboardToolbar/HelperClasses/MediaPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "452">
+               </Location>
+               <Location
+                  uuid = "DD426C40-45B0-49D0-B68D-2A7359B5C0C4 - a9b089c3a34fe438"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KeyboardToolbar.MediaPicker.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "KeyboardToolbar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kamalpunia/Documents/GitHub/KeyboardToolbar/KeyboardToolbar/KeyboardToolbar/HelperClasses/MediaPicker.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "162"
+                  endingLineNumber = "162"
+                  offsetFromSymbolStart = "656">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
