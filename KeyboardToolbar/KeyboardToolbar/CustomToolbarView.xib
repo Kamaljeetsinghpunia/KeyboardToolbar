@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomToolbarView" customModule="KeyboardToolbar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="492" height="140"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="I41-1t-PV1">
+                    <rect key="frame" x="0.0" y="0.0" width="492" height="66"/>
+                    <color key="backgroundColor" red="0.04176386159" green="0.01002027328" blue="0.11730587119999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="OS1-hL-e2u">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ll7-3j-fXF">
+                    <rect key="frame" x="0.0" y="66" width="492" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-b3-gnp">
+                            <rect key="frame" x="2" y="3.3333333333333357" width="36" height="34"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="9dB-b3-gnp" secondAttribute="height" id="ci0-KK-8YE"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" backgroundImage="camera.viewfinder" catalog="system"/>
+                            <connections>
+                                <action selector="camerButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="GYP-Ag-4n6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.041763861594636728" green="0.010020273280699989" blue="0.11730587121212122" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="FDB-q3-ruF"/>
+                        <constraint firstItem="9dB-b3-gnp" firstAttribute="top" secondItem="Ll7-3j-fXF" secondAttribute="top" constant="2" id="O9R-du-wyS"/>
+                        <constraint firstAttribute="bottom" secondItem="9dB-b3-gnp" secondAttribute="bottom" constant="2" id="QuO-PG-345"/>
+                        <constraint firstItem="9dB-b3-gnp" firstAttribute="leading" secondItem="Ll7-3j-fXF" secondAttribute="leading" constant="2" id="zuC-EH-ZQQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Ll7-3j-fXF" firstAttribute="top" secondItem="I41-1t-PV1" secondAttribute="bottom" id="0Q0-Bk-ZLp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ll7-3j-fXF" secondAttribute="bottom" id="brU-ei-Szn"/>
+                <constraint firstItem="I41-1t-PV1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eeW-lb-3Cd"/>
+                <constraint firstItem="Ll7-3j-fXF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ehu-4b-fPo"/>
+                <constraint firstItem="I41-1t-PV1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hAL-DA-TZd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ll7-3j-fXF" secondAttribute="trailing" id="ouJ-nh-R3m"/>
+                <constraint firstItem="I41-1t-PV1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="veQ-8S-Dvd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="I41-1t-PV1" id="S2u-Yv-dp2"/>
+            </connections>
+            <point key="canvasLocation" x="175.57251908396947" y="-156.33802816901408"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
+    </resources>
+</document>
