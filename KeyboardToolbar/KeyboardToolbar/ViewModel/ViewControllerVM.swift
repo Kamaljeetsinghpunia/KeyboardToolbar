@@ -11,29 +11,29 @@ class ViewControllerVM: NSObject {
     // MARK: - Variables
     private let apiServices = ApiServices()
     var requestModel = UploadImageRequestModel()
+    var imageUrl: String?
     
     // MARK: - Internal functions
-    func uploadImage(completion: @escaping ApiResponseCompletion) {
+    func uploadFile(completion: @escaping ApiResponseCompletion) {
         
         let multipartModel = self.requestModel.multipartModel
+        let uploadType: MultipartUploadType = self.requestModel.mimeType == .image ? .data : .url
         
         ///Calling api service method
-        self.apiServices.uploadImage([:], multipartModelArray: multipartModel, uploadType: .data) { [weak self] (result) in
+        self.apiServices.uploadFile([:], multipartModelArray: multipartModel, uploadType: uploadType) { [weak self] (result) in
             switch result {
             case .success(let response):
-                guard let data = response.resultData as? Data else {
+                guard let url = response.resultData as? String else {
                     completion(.failure(ApiResponseErrorBlock(message: LocalizedStringEnum.somethingWentWrong.localized)))
                     return
                 }
-                /*///Converting api Data response to respective response model.
-                self?.responseModel = JSONDecoder().convertDataToModel(data)
-                ///Clear request model.
-                self?.requestModel = CreatePostRequestModel()*/
+                self?.imageUrl = url
                 completion(.success(response))
             case .failure(let error):
                 ///Handle failure response
                 completion(.failure(error))
             }
+            self?.requestModel = UploadImageRequestModel()
         }
     }
 }

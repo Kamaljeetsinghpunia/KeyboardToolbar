@@ -35,6 +35,9 @@
 		F16FD11A2983E219002DEB14 /* UploadImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1192983E219002DEB14 /* UploadImageModel.swift */; };
 		F16FD11C2983E23C002DEB14 /* JSONEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD11B2983E23C002DEB14 /* JSONEncoder+Extension.swift */; };
 		F16FD11E2983E2B4002DEB14 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD11D2983E2B4002DEB14 /* Date+Extension.swift */; };
+		F1DBE5512987A56600D53BA3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1DBE5502987A56600D53BA3 /* Colors.xcassets */; };
+		F1DBE5532987B7A200D53BA3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE5522987B7A200D53BA3 /* AppConstants.swift */; };
+		F1DBE5552987F55600D53BA3 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE5542987F55600D53BA3 /* URL+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +73,9 @@
 		F16FD1192983E219002DEB14 /* UploadImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageModel.swift; sourceTree = "<group>"; };
 		F16FD11B2983E23C002DEB14 /* JSONEncoder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extension.swift"; sourceTree = "<group>"; };
 		F16FD11D2983E2B4002DEB14 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		F1DBE5502987A56600D53BA3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F1DBE5522987B7A200D53BA3 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		F1DBE5542987F55600D53BA3 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,7 @@
 				F1333EC62982ACCA00E9789D /* PhotoService.swift */,
 				F16FD1022983D308002DEB14 /* MediaPicker.swift */,
 				F16FD1142983E160002DEB14 /* LocalizedStringEnum.swift */,
+				F1DBE5522987B7A200D53BA3 /* AppConstants.swift */,
 			);
 			path = HelperClasses;
 			sourceTree = "<group>";
@@ -196,6 +203,7 @@
 				F16FD11B2983E23C002DEB14 /* JSONEncoder+Extension.swift */,
 				F16FD1042983D3C9002DEB14 /* UIWindow+Extension.swift */,
 				F1333ED02982BAB800E9789D /* UIView+Extension.swift */,
+				F1DBE5542987F55600D53BA3 /* URL+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -226,6 +234,7 @@
 				F1333EB929829ADE00E9789D /* Assets.xcassets */,
 				F1333EBB29829ADE00E9789D /* LaunchScreen.storyboard */,
 				F1333EBE29829ADE00E9789D /* Info.plist */,
+				F1DBE5502987A56600D53BA3 /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -324,6 +333,7 @@
 				F1333EB829829ADC00E9789D /* Main.storyboard in Resources */,
 				F1333ECB2982B21500E9789D /* CustomToolbarView.xib in Resources */,
 				F1333ECF2982B26600E9789D /* CustomToolbarViewCell.xib in Resources */,
+				F1DBE5512987A56600D53BA3 /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +389,7 @@
 				F16FD10E2983DFB6002DEB14 /* NetworkRequest.swift in Sources */,
 				F16FD0F529839C29002DEB14 /* AtomicArray.swift in Sources */,
 				F16FD0F72983AD1E002DEB14 /* ViewControllerVM.swift in Sources */,
+				F1DBE5532987B7A200D53BA3 /* AppConstants.swift in Sources */,
 				F16FD1032983D308002DEB14 /* MediaPicker.swift in Sources */,
 				F1333EC72982ACCA00E9789D /* PhotoService.swift in Sources */,
 				F16FD10F2983DFB6002DEB14 /* CustomLoader.swift in Sources */,
@@ -396,6 +407,7 @@
 				F16FD11C2983E23C002DEB14 /* JSONEncoder+Extension.swift in Sources */,
 				F16FD1112983DFB6002DEB14 /* Reachability.swift in Sources */,
 				F1333EB329829ADC00E9789D /* SceneDelegate.swift in Sources */,
+				F1DBE5552987F55600D53BA3 /* URL+Extension.swift in Sources */,
 				F16FD1122983DFB6002DEB14 /* AlamofireNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

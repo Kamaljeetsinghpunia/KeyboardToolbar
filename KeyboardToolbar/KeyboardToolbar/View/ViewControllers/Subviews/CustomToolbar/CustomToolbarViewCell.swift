@@ -14,6 +14,7 @@ class CustomToolbarViewCell: UICollectionViewCell {
     
     // MARK: - Variables
     var representedAssetIdentifier: String = ""
+    var isVideo: Bool = false
     
     // MARK: - View life cycle
     override func awakeFromNib() {
@@ -26,12 +27,13 @@ class CustomToolbarViewCell: UICollectionViewCell {
     }
 
     // MARK: - Internal function
-    func setupCellWith(image: UIImage, border: Bool = false) {
+    func setupCellWith(image: UIImage, border: Bool = false, isVideo: Bool) {
         self.imageView.image = image
+        self.isVideo = isVideo
         if border {
-            self.imageView.addBorder(color: .white, width: 2)
+            self.imageView.addBorder(color: UIColor(named: "appPurple")!, width: 4)
         }else {
-            self.imageView.addBorder(color: .clear, width: 2)
+            self.imageView.addBorder(color: .clear, width: 4)
         }
     }
     

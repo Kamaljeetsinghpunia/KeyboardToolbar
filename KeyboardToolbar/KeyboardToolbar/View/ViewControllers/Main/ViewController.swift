@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var urlLabel: UILabel!
     
     // MARK: - Variables
     private lazy var photoLibrary = PhotoService()
@@ -64,12 +65,25 @@ extension ViewController: CustomToolbarViewDelegates {
     
     func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, image: UIImage?, imageName: String?) {
         if indexPath.item == 0 {
+            //First index for open the camera
             MediaPicker.shared.checkAuthorizationAndOpenPicker(with: .camera)
+        }else if indexPath.item == (AppConstants.totalImagesCount + 1) {
+            //Last index for open the gallery
+            MediaPicker.shared.checkAuthorizationAndOpenPicker(with: .photoLibrary)
         }else {
             self.viewModel.requestModel.selectedImage = image
             self.viewModel.requestModel.fileName = imageName
-            self.uploadImage()
+            self.viewModel.requestModel.mimeType = .image
+            self.uploadFile()
         }
+    }
+    
+    func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, videoUrl: URL?, videoName: String?, thumbnail: UIImage?) {
+        self.viewModel.requestModel.videoUrl = videoUrl
+        self.viewModel.requestModel.selectedImage = thumbnail
+        self.viewModel.requestModel.fileName = videoName
+        self.viewModel.requestModel.mimeType = .video
+        self.uploadFile()
     }
     
     func toolbarView(_ view: CustomToolbarView, askFor permissions: Bool) {
@@ -85,18 +99,37 @@ extension ViewController: MediaPickerDelegate {
     func mediaPicker(_ mediaPicker: MediaPicker, didChooseImage image: UIImage?, imageName: String?) {
         self.viewModel.requestModel.selectedImage = image
         self.viewModel.requestModel.fileName = imageName
-        self.uploadImage()
+        self.viewModel.requestModel.mimeType = .image
+        self.uploadFile()
+    }
+    
+    func mediaPicker(_ mediaPicker: MediaPicker, didChooseVideo url: URL?, videoName: String?, thumbnail: UIImage?) {
+        self.viewModel.requestModel.selectedImage = thumbnail
+        self.viewModel.requestModel.videoUrl = url
+        self.viewModel.requestModel.fileName = videoName
+        self.viewModel.requestModel.mimeType = .video
+        self.uploadFile()
     }
 }
 
 // MARK: - Api functions
 extension ViewController {
-    func uploadImage() {
-        CustomLoader.shared.show()
-        self.textField.resignFirstResponder()
-        self.viewModel.uploadImage { result in
-            CustomLoader.shared.hide()
-            self.textField.becomeFirstResponder()
+    func uploadFile() {
+        DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else {
+                return
+            }
+            CustomLoader.shared.show()
+            self.textField.resignFirstResponder()
+            self.viewModel.uploadFile { [weak self] result in
+                CustomLoader.shared.hide()
+                guard let `self` = self else {
+                    return
+                }
+                self.textField.becomeFirstResponder()
+                self.urlLabel.text = self.viewModel.imageUrl
+                self.customToolbar?.showSelectedImage(self.viewModel.requestModel.selectedImage)
+            }
         }
     }
 }

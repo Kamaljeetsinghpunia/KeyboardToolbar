@@ -6,7 +6,7 @@ import Foundation
 
 enum DateFormat: String {
     case timeWith12Hour = "hh:mm a"
-    case dateTime = "MM-dd-yyyy hh:mm a"
+    case dateTime = "MM-dd-yyyy hh:mm:ss a"
     case appDate = "MM-dd-yyyy"
     case smallYear = "MM-dd-yy"
 }

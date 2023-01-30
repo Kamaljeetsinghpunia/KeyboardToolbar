@@ -28,10 +28,10 @@ class MediaPicker: NSObject {
     private var picker: UIImagePickerController!
     static var shared = MediaPicker()
     private weak var delegate: MediaPickerDelegate?
-    private var allowEditing = true
+    private var allowEditing = false
     private var allowVideoSelectionOnly = false
     
-    func setupPicker(delegate: MediaPickerDelegate, allowEditing: Bool = true, allowVideoSelectionOnly: Bool) {
+    func setupPicker(delegate: MediaPickerDelegate, allowEditing: Bool = false, allowVideoSelectionOnly: Bool) {
         self.delegate = delegate
         self.allowEditing = allowEditing
         self.allowVideoSelectionOnly = allowVideoSelectionOnly
@@ -96,7 +96,7 @@ class MediaPicker: NSObject {
             if self.allowVideoSelectionOnly {
                 self.picker.mediaTypes = [UTType.movie.identifier]
             }else {
-                self.picker.mediaTypes = [UTType.image.identifier]
+                self.picker.mediaTypes = [UTType.image.identifier, UTType.movie.identifier]
             }
             UIWindow.keyWindow?.rootViewController?.present(self.picker, animated: true, completion: nil)
         }
@@ -157,7 +157,8 @@ class MediaPicker: NSObject {
 
 // MARK: - IMAGE PICKER CONTROLLER DELEGATE
 extension MediaPicker: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]){
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
         var fileName: String?
         if let asset = info[UIImagePickerController.InfoKey.phAsset] as? PHAsset {
             let assetResources = PHAssetResource.assetResources(for: asset)
@@ -174,11 +175,10 @@ extension MediaPicker: UIImagePickerControllerDelegate, UINavigationControllerDe
 
             if mediaType == (UTType.movie.identifier) {
                 if let url = info[.mediaURL] as? URL {
-                    self.delegate?.mediaPicker?(self, didChooseVideo: url, videoName: fileName, thumbnail: nil)
+                    self.delegate?.mediaPicker?(self, didChooseVideo: url, videoName: fileName, thumbnail: url.imageThumbnail())
                 }
             }
         }
-        picker.dismiss(animated: true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController){

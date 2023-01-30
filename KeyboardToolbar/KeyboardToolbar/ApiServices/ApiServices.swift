@@ -7,26 +7,25 @@ import Foundation
 
 fileprivate enum ApiServicesEndPoints: APIService {
     //Define cases according to API's
-    case uploadImage(_ parameters: [String: Any])
+    case uploadFile(_ parameters: [String: Any])
     
     //Return path according to api case
     var path: String {
         switch self {
-        case .uploadImage:
-            return "http://nostr.build/upload.php"
+        case .uploadFile:
+            return "\(AppConstants.baseUrl)/api/upload/nostrboard.php"
         }
     }
     
     //Return resource according to api case
     var resource: Resource {
-        let headersWithToken: [String: Any] = [
-            "Content-Type": "application/json"/*,
-            "Authorization": "Bearer \("AppCache.shared.token")"*/
+        let headers: [String: Any] = [
+            "Content-Type": "application/json"
         ]
         
         switch self {
-        case .uploadImage(let params):
-            return Resource(method: .post, parameters: params, encoding: .QUERY, headers: headersWithToken, validator: APIDataResultValidator(), responseType: .data)
+        case .uploadFile(let params):
+            return Resource(method: .post, parameters: params, encoding: .QUERY, headers: headers, validator: APIStringResultValidator(), responseType: .json)
             
         }
     }
@@ -35,8 +34,8 @@ fileprivate enum ApiServicesEndPoints: APIService {
 
 struct ApiServices {
     
-    func uploadImage(_ parameters: [String: Any], multipartModelArray: [MultipartModel], uploadType: MultipartUploadType, completionBlock: @escaping ApiResponseCompletion) {
-        ApiServicesEndPoints.uploadImage(parameters).requestMultipart(modelArray: multipartModelArray, uploadType: uploadType, completionBlock: completionBlock)
+    func uploadFile(_ parameters: [String: Any], multipartModelArray: [MultipartModel], uploadType: MultipartUploadType, completionBlock: @escaping ApiResponseCompletion) {
+        ApiServicesEndPoints.uploadFile(parameters).requestMultipart(modelArray: multipartModelArray, uploadType: uploadType, completionBlock: completionBlock)
     }
     
 }

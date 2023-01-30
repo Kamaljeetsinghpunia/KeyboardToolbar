@@ -5,12 +5,12 @@
       "scale" : "1x"
     },
     {
-      "filename" : "icons8-compact-camera-48.png",
+      "filename" : "icons8-picture-48.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "icons8-compact-camera-96.png",
+      "filename" : "icons8-picture-96.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -18,8 +18,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "template"
   }
 }

@@ -45,6 +45,27 @@ extension APIResultValidatorApi{
     }
 }
 
+struct APIStringResultValidator: APIResultValidatorApi{
+    
+    func validateResponse(statusCode: Int, response: Any?, completionBlock: @escaping ApiResponseCompletion) {
+
+        if statusCode == 200 || statusCode == 0  {
+            if let response = response as? String {
+                completionBlock(.success(self.getApiResponse(result: response, statusCode: statusCode)))
+            } else {
+                completionBlock(.failure(self.getApiError(result: "Invalid JSON. Line: 61. Class: APIResultValidator")))
+            }
+        } else {
+            if let response = response  as? [String: Any] {
+                let message = response["statusMessage"] as? String ?? LocalizedStringEnum.somethingWentWrong.localized
+                completionBlock(.failure(self.getApiError(result: message)))
+            }else {
+                completionBlock(.failure(self.getApiError(result: "Invalid JSON. Line: 69. Class: APIResultValidator")))
+            }
+        }
+    }
+}
+
 struct APIJSONResultValidator: APIResultValidatorApi{
     
     func validateResponse(statusCode: Int, response: Any?, completionBlock: @escaping ApiResponseCompletion) {

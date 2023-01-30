@@ -56,10 +56,14 @@ extension PhotoService {
         // Add sortDescriptor so the lastest photos will be returned.
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: false)
         options.sortDescriptors = [sortDescriptor]
+        options.predicate = NSPredicate(
+            format: "mediaType == %d || mediaType == %d",
+            PHAssetMediaType.image.rawValue,
+            PHAssetMediaType.video.rawValue
+        )
 
         // Fetch the photos.
-        return PHAsset.fetchAssets(with: .image, options: options)
-
+        return PHAsset.fetchAssets(with: options)
     }
 
     private func getAlbumData(id: Int, completion: ((AlbumData?) -> Void)?) {

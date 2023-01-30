@@ -22,17 +22,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9T-1V-Hlg">
+                                <rect key="frame" x="10" y="233" width="373" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="C9T-1V-Hlg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Sy-SQ-aDv"/>
                             <constraint firstItem="e1v-Cz-H2m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="5fN-Rl-nLY"/>
                             <constraint firstItem="e1v-Cz-H2m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7iH-qS-Te4"/>
+                            <constraint firstItem="C9T-1V-Hlg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Uf1-lD-Ngz"/>
                             <constraint firstItem="e1v-Cz-H2m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="fiw-fb-d9H"/>
+                            <constraint firstItem="C9T-1V-Hlg" firstAttribute="top" secondItem="e1v-Cz-H2m" secondAttribute="bottom" constant="40" id="iZC-1X-HMR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="textField" destination="e1v-Cz-H2m" id="orK-4o-oTt"/>
+                        <outlet property="urlLabel" destination="C9T-1V-Hlg" id="IfV-fX-Icp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

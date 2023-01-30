@@ -11,11 +11,14 @@ import UIKit
 struct UploadImageRequestModel {
     var selectedImage: UIImage?
     var fileName: String?
+    var mimeType: MimeType = .image
+    var videoUrl: URL?
     
     var multipartModel: [MultipartModel] {
-
-        let id = MultipartModel(key: "fileToUpload", data: self.selectedImage?.jpegData(compressionQuality: 1), url: nil, mimeType: .image, fileName: self.fileName ?? "file_\(Date().getString(format: .dateTime))")
-        return [id]
+        
+        let name = self.fileName ?? "file_\(Date().getString(format: .dateTime))\(self.mimeType == .image ? ".png" : ".mp4")"
+        let model = MultipartModel(key: "fileToUpload", data: self.selectedImage?.pngData(), url: videoUrl, mimeType: self.mimeType, fileName: name)
+        return [model]
     }
     
 }

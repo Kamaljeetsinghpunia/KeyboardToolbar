@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,17 +30,21 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="galleryIcon" translatesAutoresizingMaskIntoConstraints="NO" id="1es-Ch-1DX">
+                    <rect key="frame" x="0.0" y="0.0" width="492" height="66"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ll7-3j-fXF">
                     <rect key="frame" x="0.0" y="66" width="492" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dB-b3-gnp">
-                            <rect key="frame" x="2" y="3.3333333333333357" width="36" height="34"/>
+                            <rect key="frame" x="2" y="2" width="36" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="9dB-b3-gnp" secondAttribute="height" id="ci0-KK-8YE"/>
+                                <constraint firstAttribute="width" secondItem="9dB-b3-gnp" secondAttribute="height" multiplier="1:1" id="ci0-KK-8YE"/>
                             </constraints>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" name="appPurple"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" backgroundImage="camera.viewfinder" catalog="system"/>
+                            <state key="normal" backgroundImage="galleryIcon"/>
                             <connections>
                                 <action selector="cameraButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="wkl-wU-DUD"/>
                             </connections>
@@ -58,23 +63,31 @@
             <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
                 <constraint firstItem="Ll7-3j-fXF" firstAttribute="top" secondItem="I41-1t-PV1" secondAttribute="bottom" id="0Q0-Bk-ZLp"/>
+                <constraint firstItem="1es-Ch-1DX" firstAttribute="trailing" secondItem="I41-1t-PV1" secondAttribute="trailing" id="M3b-3z-dt2"/>
+                <constraint firstItem="1es-Ch-1DX" firstAttribute="bottom" secondItem="I41-1t-PV1" secondAttribute="bottom" id="QW2-Pd-hZz"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ll7-3j-fXF" secondAttribute="bottom" id="brU-ei-Szn"/>
                 <constraint firstItem="I41-1t-PV1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eeW-lb-3Cd"/>
                 <constraint firstItem="Ll7-3j-fXF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ehu-4b-fPo"/>
+                <constraint firstItem="1es-Ch-1DX" firstAttribute="leading" secondItem="I41-1t-PV1" secondAttribute="leading" id="gnK-7A-Rag"/>
                 <constraint firstItem="I41-1t-PV1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hAL-DA-TZd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ll7-3j-fXF" secondAttribute="trailing" id="ouJ-nh-R3m"/>
+                <constraint firstItem="1es-Ch-1DX" firstAttribute="top" secondItem="I41-1t-PV1" secondAttribute="top" id="pP3-yd-0Zp"/>
                 <constraint firstItem="I41-1t-PV1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="veQ-8S-Dvd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="collectionHeightConstraint" destination="Tog-iv-cZq" id="hu5-Bc-Oi9"/>
                 <outlet property="collectionView" destination="I41-1t-PV1" id="S2u-Yv-dp2"/>
+                <outlet property="selectedImageView" destination="1es-Ch-1DX" id="IV8-pJ-20h"/>
             </connections>
             <point key="canvasLocation" x="175.57251908396947" y="-156.33802816901408"/>
         </view>
     </objects>
     <resources>
-        <image name="camera.viewfinder" catalog="system" width="128" height="115"/>
+        <image name="galleryIcon" width="32" height="32"/>
+        <namedColor name="appPurple">
+            <color red="0.792156862745098" green="0.32549019607843138" blue="0.80392156862745101" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
