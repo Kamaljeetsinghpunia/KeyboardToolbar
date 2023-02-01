@@ -10,4 +10,5 @@ import Foundation
 struct AppConstants {
     static let totalImagesCount = 20
     static let baseUrl = "https://nostr.build"
+    static let websiteLink = "https://nostr.build"
 }

@@ -35,6 +35,11 @@ class CustomToolbarView: UIView {
         self.initialize()
     }
     
+    override var intrinsicContentSize: CGSize {
+        return self.bounds.size
+    }
+    
+    // MARK: - IBAction
     @IBAction func cameraButtonAction(_ sender: UIButton) {
         if self.enableCameraButton {
             self.hideSelectedImageView()
@@ -44,8 +49,8 @@ class CustomToolbarView: UIView {
         }
     }
     
-    override var intrinsicContentSize: CGSize {
-        return self.bounds.size
+    @IBAction func logoButtonAction(_ sender: UIButton) {
+        self.openWebsite()
     }
     
     // MARK: - Internal function
@@ -161,6 +166,11 @@ class CustomToolbarView: UIView {
                 completion(nil, nil)
             }
         }
+    }
+    
+    private func openWebsite() {
+        guard let url = URL(string: AppConstants.websiteLink) else { return }
+        UIApplication.shared.open(url)
     }
 }
 

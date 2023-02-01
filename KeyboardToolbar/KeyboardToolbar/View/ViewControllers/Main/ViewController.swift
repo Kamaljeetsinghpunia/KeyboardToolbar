@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     
     // MARK: - IBOutlets
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var urlLabel: UILabel!
     
     // MARK: - Variables
     private lazy var photoLibrary = PhotoService()
@@ -49,6 +48,7 @@ class ViewController: UIViewController {
         self.customToolbar = .loadFromNib()
         self.customToolbar?.delegate = self
         self.customToolbar?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40)
+        self.customToolbar?.backgroundColor = .systemBackground
         self.customToolbar?.textField = self.textField
         self.textField.inputAccessoryView?.autoresizingMask = .flexibleHeight
         self.textField.inputAccessoryView = self.customToolbar
@@ -127,7 +127,7 @@ extension ViewController {
                     return
                 }
                 self.textField.becomeFirstResponder()
-                self.urlLabel.text = self.viewModel.imageUrl
+                self.textField.text = self.viewModel.imageUrl
                 self.customToolbar?.showSelectedImage(self.viewModel.requestModel.selectedImage)
             }
         }

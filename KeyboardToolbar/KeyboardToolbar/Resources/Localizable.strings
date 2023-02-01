@@ -2,7 +2,7 @@
   LocalizedString.strings
 */
 
-"appName" = "KeyboardToolbar";
+"appName" = "Nostr Image Board";
 "networkNotReachable" = "Network is not reachable";
 "somethingWentWrong" = "Something went wrong";
 
