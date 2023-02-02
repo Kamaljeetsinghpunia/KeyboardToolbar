@@ -18,13 +18,13 @@ class CustomLoader: NSObject {
     }
     
     // MARK: - CUSTOM FUNCTIONS
-    func show() {
+    func showOn(vc: UIViewController) {
         DispatchQueue.main.async { [weak self] in
             guard let `self` = self else {
                 return
             }
             self.loaderView.alpha = 0
-            UIApplication.shared.keyWindow?.addSubview(self.loaderView)
+            vc.view.addSubview(self.loaderView)
             UIView.animate(withDuration: 0.3, delay: 0, options: UIView.AnimationOptions.curveEaseIn, animations: {
                 self.loaderView.alpha = 1
             }) { (finish) in

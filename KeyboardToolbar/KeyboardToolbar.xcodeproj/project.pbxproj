@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47A7DD85E417B1755740554A /* Pods_Nostr_Image_Board.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DDC6FA3F40C616699A3EE2 /* Pods_Nostr_Image_Board.framework */; };
 		AC0F92E1BA1D63F9B426B106 /* Pods_KeyboardToolbar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7469AFD7E0816856C2D28B0A /* Pods_KeyboardToolbar.framework */; };
 		F1333EB129829ADC00E9789D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EB029829ADC00E9789D /* AppDelegate.swift */; };
 		F1333EB329829ADC00E9789D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EB229829ADC00E9789D /* SceneDelegate.swift */; };
@@ -35,14 +36,73 @@
 		F16FD11A2983E219002DEB14 /* UploadImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1192983E219002DEB14 /* UploadImageModel.swift */; };
 		F16FD11C2983E23C002DEB14 /* JSONEncoder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD11B2983E23C002DEB14 /* JSONEncoder+Extension.swift */; };
 		F16FD11E2983E2B4002DEB14 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD11D2983E2B4002DEB14 /* Date+Extension.swift */; };
+		F19F2C50298A899700AE8B51 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = F19F2C4F298A899700AE8B51 /* KeyboardKit */; };
+		F19F2C52298A89BF00AE8B51 /* KeyboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = F19F2C51298A89BF00AE8B51 /* KeyboardKit */; };
+		F19F2C5E298A9D7100AE8B51 /* NIBKeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19F2C5D298A9D7100AE8B51 /* NIBKeyboardView.swift */; };
+		F19F2C5F298B8B2100AE8B51 /* CustomToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EC82982B20A00E9789D /* CustomToolbarView.swift */; };
+		F19F2C60298B8B2800AE8B51 /* CustomToolbarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1333ECA2982B21500E9789D /* CustomToolbarView.xib */; };
+		F19F2C61298B8B2C00AE8B51 /* CustomToolbarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333ECC2982B26600E9789D /* CustomToolbarViewCell.swift */; };
+		F19F2C62298B8B3100AE8B51 /* CustomToolbarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1333ECD2982B26600E9789D /* CustomToolbarViewCell.xib */; };
+		F19F2C63298B8B3500AE8B51 /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD0F62983AD1E002DEB14 /* ViewControllerVM.swift */; };
+		F19F2C64298B8B4600AE8B51 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333ED02982BAB800E9789D /* UIView+Extension.swift */; };
+		F19F2C65298B8BF200AE8B51 /* PhotoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EC62982ACCA00E9789D /* PhotoService.swift */; };
+		F19F2C66298B8BFA00AE8B51 /* ApiServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1072983DF87002DEB14 /* ApiServices.swift */; };
+		F19F2C67298B8C2800AE8B51 /* AlamofireNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD10D2983DFB6002DEB14 /* AlamofireNetworkManager.swift */; };
+		F19F2C68298B8C3600AE8B51 /* UploadImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1192983E219002DEB14 /* UploadImageModel.swift */; };
+		F19F2C69298B8CE800AE8B51 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1092983DFB6002DEB14 /* NetworkRequest.swift */; };
+		F19F2C6A298B8CF900AE8B51 /* APIResultValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD10B2983DFB6002DEB14 /* APIResultValidator.swift */; };
+		F19F2C6B298B8D0000AE8B51 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD10A2983DFB6002DEB14 /* CustomLoader.swift */; };
+		F19F2C6C298B8D0500AE8B51 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD10C2983DFB6002DEB14 /* Reachability.swift */; };
+		F19F2C6D298B8D1000AE8B51 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F16FD1162983E173002DEB14 /* Localizable.strings */; };
+		F19F2C6E298B8D1400AE8B51 /* LocalizedStringEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1142983E160002DEB14 /* LocalizedStringEnum.swift */; };
+		F19F2C6F298B8D1B00AE8B51 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD11D2983E2B4002DEB14 /* Date+Extension.swift */; };
+		F19F2C70298B8D2500AE8B51 /* AtomicArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD0F429839C29002DEB14 /* AtomicArray.swift */; };
+		F19F2C71298B8D6D00AE8B51 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE5522987B7A200D53BA3 /* AppConstants.swift */; };
+		F19F2C72298B8D9B00AE8B51 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE5542987F55600D53BA3 /* URL+Extension.swift */; };
+		F19F2C96298B952700AE8B51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1333EB929829ADE00E9789D /* Assets.xcassets */; };
+		F19F2C97298B955500AE8B51 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1DBE5502987A56600D53BA3 /* Colors.xcassets */; };
+		F19F2C98298BC1B500AE8B51 /* MediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1022983D308002DEB14 /* MediaPicker.swift */; };
+		F19F2C9A298BCA3700AE8B51 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333EB429829ADC00E9789D /* ViewController.swift */; };
+		F1B9BFF3298A5CD6007B0913 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B9BFF2298A5CD6007B0913 /* KeyboardViewController.swift */; };
+		F1B9BFF7298A5CD6007B0913 /* Nostr Image Board.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = F1B9BFF0298A5CD6007B0913 /* Nostr Image Board.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F1DBE5512987A56600D53BA3 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1DBE5502987A56600D53BA3 /* Colors.xcassets */; };
 		F1DBE5532987B7A200D53BA3 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE5522987B7A200D53BA3 /* AppConstants.swift */; };
 		F1DBE5552987F55600D53BA3 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBE5542987F55600D53BA3 /* URL+Extension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F1B9BFF5298A5CD6007B0913 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1333EA529829ADC00E9789D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1B9BFEF298A5CD6007B0913;
+			remoteInfo = "Nostr Image Board";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F1B9BFFB298A5CD6007B0913 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F1B9BFF7298A5CD6007B0913 /* Nostr Image Board.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		15BC0AA8F7952A41055106A1 /* Pods_NostrImageBoard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NostrImageBoard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		50F77ED8AB6A660424A700B5 /* Pods-Nostr Image Board.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nostr Image Board.debug.xcconfig"; path = "Target Support Files/Pods-Nostr Image Board/Pods-Nostr Image Board.debug.xcconfig"; sourceTree = "<group>"; };
+		6B78ABFDC0DD01D938BB28BA /* Pods-NostrImageBoard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NostrImageBoard.release.xcconfig"; path = "Target Support Files/Pods-NostrImageBoard/Pods-NostrImageBoard.release.xcconfig"; sourceTree = "<group>"; };
 		7469AFD7E0816856C2D28B0A /* Pods_KeyboardToolbar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KeyboardToolbar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75DDC6FA3F40C616699A3EE2 /* Pods_Nostr_Image_Board.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nostr_Image_Board.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F158309B9D0397D245362F /* Pods-KeyboardToolbar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardToolbar.debug.xcconfig"; path = "Target Support Files/Pods-KeyboardToolbar/Pods-KeyboardToolbar.debug.xcconfig"; sourceTree = "<group>"; };
+		97270A66DE5F068DD9E9C2EC /* Pods-Nostr Image Board.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nostr Image Board.release.xcconfig"; path = "Target Support Files/Pods-Nostr Image Board/Pods-Nostr Image Board.release.xcconfig"; sourceTree = "<group>"; };
+		C3F1B84A4C720157F4DC34A7 /* Pods-NostrImageBoard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NostrImageBoard.debug.xcconfig"; path = "Target Support Files/Pods-NostrImageBoard/Pods-NostrImageBoard.debug.xcconfig"; sourceTree = "<group>"; };
 		C42BCA57B4926D957DB651EA /* Pods-KeyboardToolbar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KeyboardToolbar.release.xcconfig"; path = "Target Support Files/Pods-KeyboardToolbar/Pods-KeyboardToolbar.release.xcconfig"; sourceTree = "<group>"; };
 		F1333EAD29829ADC00E9789D /* KeyboardToolbar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KeyboardToolbar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1333EB029829ADC00E9789D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +133,10 @@
 		F16FD1192983E219002DEB14 /* UploadImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageModel.swift; sourceTree = "<group>"; };
 		F16FD11B2983E23C002DEB14 /* JSONEncoder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSONEncoder+Extension.swift"; sourceTree = "<group>"; };
 		F16FD11D2983E2B4002DEB14 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		F19F2C5D298A9D7100AE8B51 /* NIBKeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBKeyboardView.swift; sourceTree = "<group>"; };
+		F1B9BFF0298A5CD6007B0913 /* Nostr Image Board.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Nostr Image Board.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1B9BFF2298A5CD6007B0913 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		F1B9BFF4298A5CD6007B0913 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1DBE5502987A56600D53BA3 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F1DBE5522987B7A200D53BA3 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		F1DBE5542987F55600D53BA3 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
@@ -83,7 +147,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F19F2C50298A899700AE8B51 /* KeyboardKit in Frameworks */,
 				AC0F92E1BA1D63F9B426B106 /* Pods_KeyboardToolbar.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B9BFED298A5CD6007B0913 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F19F2C52298A89BF00AE8B51 /* KeyboardKit in Frameworks */,
+				47A7DD85E417B1755740554A /* Pods_Nostr_Image_Board.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				7469AFD7E0816856C2D28B0A /* Pods_KeyboardToolbar.framework */,
+				75DDC6FA3F40C616699A3EE2 /* Pods_Nostr_Image_Board.framework */,
+				15BC0AA8F7952A41055106A1 /* Pods_NostrImageBoard.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -103,6 +179,10 @@
 			children = (
 				78F158309B9D0397D245362F /* Pods-KeyboardToolbar.debug.xcconfig */,
 				C42BCA57B4926D957DB651EA /* Pods-KeyboardToolbar.release.xcconfig */,
+				50F77ED8AB6A660424A700B5 /* Pods-Nostr Image Board.debug.xcconfig */,
+				97270A66DE5F068DD9E9C2EC /* Pods-Nostr Image Board.release.xcconfig */,
+				C3F1B84A4C720157F4DC34A7 /* Pods-NostrImageBoard.debug.xcconfig */,
+				6B78ABFDC0DD01D938BB28BA /* Pods-NostrImageBoard.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -111,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				F1333EAF29829ADC00E9789D /* KeyboardToolbar */,
+				F1B9BFF1298A5CD6007B0913 /* Nostr Image Board */,
 				F1333EAE29829ADC00E9789D /* Products */,
 				A78E48CE45F587B0D2E71072 /* Pods */,
 				18D725E3EF45D72E037B199C /* Frameworks */,
@@ -121,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				F1333EAD29829ADC00E9789D /* KeyboardToolbar.app */,
+				F1B9BFF0298A5CD6007B0913 /* Nostr Image Board.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -267,6 +349,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F1B9BFF1298A5CD6007B0913 /* Nostr Image Board */ = {
+			isa = PBXGroup;
+			children = (
+				F1B9BFF2298A5CD6007B0913 /* KeyboardViewController.swift */,
+				F19F2C5D298A9D7100AE8B51 /* NIBKeyboardView.swift */,
+				F1B9BFF4298A5CD6007B0913 /* Info.plist */,
+			);
+			path = "Nostr Image Board";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -279,15 +371,41 @@
 				F1333EAA29829ADC00E9789D /* Frameworks */,
 				F1333EAB29829ADC00E9789D /* Resources */,
 				077D854C7F2A681D753B7969 /* [CP] Embed Pods Frameworks */,
+				F1B9BFFB298A5CD6007B0913 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1B9BFF6298A5CD6007B0913 /* PBXTargetDependency */,
+			);
+			name = KeyboardToolbar;
+			packageProductDependencies = (
+				F19F2C4F298A899700AE8B51 /* KeyboardKit */,
+			);
+			productName = KeyboardToolbar;
+			productReference = F1333EAD29829ADC00E9789D /* KeyboardToolbar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F1B9BFEF298A5CD6007B0913 /* Nostr Image Board */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1B9BFF8298A5CD6007B0913 /* Build configuration list for PBXNativeTarget "Nostr Image Board" */;
+			buildPhases = (
+				E5EE3CE9A050BAA7652A1AC6 /* [CP] Check Pods Manifest.lock */,
+				F1B9BFEC298A5CD6007B0913 /* Sources */,
+				F1B9BFED298A5CD6007B0913 /* Frameworks */,
+				F1B9BFEE298A5CD6007B0913 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = KeyboardToolbar;
-			productName = KeyboardToolbar;
-			productReference = F1333EAD29829ADC00E9789D /* KeyboardToolbar.app */;
-			productType = "com.apple.product-type.application";
+			name = "Nostr Image Board";
+			packageProductDependencies = (
+				F19F2C51298A89BF00AE8B51 /* KeyboardKit */,
+			);
+			productName = "Nostr Image Board";
+			productReference = F1B9BFF0298A5CD6007B0913 /* Nostr Image Board.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -302,6 +420,9 @@
 					F1333EAC29829ADC00E9789D = {
 						CreatedOnToolsVersion = 14.2;
 					};
+					F1B9BFEF298A5CD6007B0913 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 				};
 			};
 			buildConfigurationList = F1333EA829829ADC00E9789D /* Build configuration list for PBXProject "KeyboardToolbar" */;
@@ -313,11 +434,15 @@
 				Base,
 			);
 			mainGroup = F1333EA429829ADC00E9789D;
+			packageReferences = (
+				F19F2C4E298A899700AE8B51 /* XCRemoteSwiftPackageReference "KeyboardKit" */,
+			);
 			productRefGroup = F1333EAE29829ADC00E9789D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F1333EAC29829ADC00E9789D /* KeyboardToolbar */,
+				F1B9BFEF298A5CD6007B0913 /* Nostr Image Board */,
 			);
 		};
 /* End PBXProject section */
@@ -334,6 +459,18 @@
 				F1333ECB2982B21500E9789D /* CustomToolbarView.xib in Resources */,
 				F1333ECF2982B26600E9789D /* CustomToolbarViewCell.xib in Resources */,
 				F1DBE5512987A56600D53BA3 /* Colors.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1B9BFEE298A5CD6007B0913 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F19F2C97298B955500AE8B51 /* Colors.xcassets in Resources */,
+				F19F2C6D298B8D1000AE8B51 /* Localizable.strings in Resources */,
+				F19F2C60298B8B2800AE8B51 /* CustomToolbarView.xib in Resources */,
+				F19F2C96298B952700AE8B51 /* Assets.xcassets in Resources */,
+				F19F2C62298B8B3100AE8B51 /* CustomToolbarViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +516,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E5EE3CE9A050BAA7652A1AC6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nostr Image Board-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -412,7 +571,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1B9BFEC298A5CD6007B0913 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F19F2C6C298B8D0500AE8B51 /* Reachability.swift in Sources */,
+				F19F2C71298B8D6D00AE8B51 /* AppConstants.swift in Sources */,
+				F19F2C98298BC1B500AE8B51 /* MediaPicker.swift in Sources */,
+				F19F2C64298B8B4600AE8B51 /* UIView+Extension.swift in Sources */,
+				F19F2C5F298B8B2100AE8B51 /* CustomToolbarView.swift in Sources */,
+				F19F2C66298B8BFA00AE8B51 /* ApiServices.swift in Sources */,
+				F1B9BFF3298A5CD6007B0913 /* KeyboardViewController.swift in Sources */,
+				F19F2C6F298B8D1B00AE8B51 /* Date+Extension.swift in Sources */,
+				F19F2C63298B8B3500AE8B51 /* ViewControllerVM.swift in Sources */,
+				F19F2C5E298A9D7100AE8B51 /* NIBKeyboardView.swift in Sources */,
+				F19F2C6A298B8CF900AE8B51 /* APIResultValidator.swift in Sources */,
+				F19F2C67298B8C2800AE8B51 /* AlamofireNetworkManager.swift in Sources */,
+				F19F2C72298B8D9B00AE8B51 /* URL+Extension.swift in Sources */,
+				F19F2C6B298B8D0000AE8B51 /* CustomLoader.swift in Sources */,
+				F19F2C61298B8B2C00AE8B51 /* CustomToolbarViewCell.swift in Sources */,
+				F19F2C69298B8CE800AE8B51 /* NetworkRequest.swift in Sources */,
+				F19F2C6E298B8D1400AE8B51 /* LocalizedStringEnum.swift in Sources */,
+				F19F2C68298B8C3600AE8B51 /* UploadImageModel.swift in Sources */,
+				F19F2C9A298BCA3700AE8B51 /* ViewController.swift in Sources */,
+				F19F2C65298B8BF200AE8B51 /* PhotoService.swift in Sources */,
+				F19F2C70298B8D2500AE8B51 /* AtomicArray.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1B9BFF6298A5CD6007B0913 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1B9BFEF298A5CD6007B0913 /* Nostr Image Board */;
+			targetProxy = F1B9BFF5298A5CD6007B0913 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F1333EB629829ADC00E9789D /* Main.storyboard */ = {
@@ -552,6 +747,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 78F158309B9D0397D245362F /* Pods-KeyboardToolbar.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -588,6 +784,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C42BCA57B4926D957DB651EA /* Pods-KeyboardToolbar.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -620,6 +817,62 @@
 			};
 			name = Release;
 		};
+		F1B9BFF9298A5CD6007B0913 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50F77ED8AB6A660424A700B5 /* Pods-Nostr Image Board.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L4F54NJDC9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nostr Image Board/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nostr Image Board";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keyboardToolbarApp.tech.Nostr-Image-Board";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1B9BFFA298A5CD6007B0913 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97270A66DE5F068DD9E9C2EC /* Pods-Nostr Image Board.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L4F54NJDC9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nostr Image Board/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Nostr Image Board";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.keyboardToolbarApp.tech.Nostr-Image-Board";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -641,7 +894,40 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		F1B9BFF8298A5CD6007B0913 /* Build configuration list for PBXNativeTarget "Nostr Image Board" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1B9BFF9298A5CD6007B0913 /* Debug */,
+				F1B9BFFA298A5CD6007B0913 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F19F2C4E298A899700AE8B51 /* XCRemoteSwiftPackageReference "KeyboardKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KeyboardKit/KeyboardKit.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F19F2C4F298A899700AE8B51 /* KeyboardKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F19F2C4E298A899700AE8B51 /* XCRemoteSwiftPackageReference "KeyboardKit" */;
+			productName = KeyboardKit;
+		};
+		F19F2C51298A89BF00AE8B51 /* KeyboardKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F19F2C4E298A899700AE8B51 /* XCRemoteSwiftPackageReference "KeyboardKit" */;
+			productName = KeyboardKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F1333EA529829ADC00E9789D /* Project object */;
 }

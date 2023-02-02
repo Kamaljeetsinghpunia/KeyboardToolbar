@@ -37,7 +37,7 @@ class MediaPicker: NSObject {
         self.allowVideoSelectionOnly = allowVideoSelectionOnly
     }
     
-    func openActionSheetForImagePicker() {
+    /*func openActionSheetForImagePicker() {
         let optionMenu = UIAlertController(title: nil, message: Constants.chooseOption, preferredStyle: .actionSheet)
         let cameraAction = UIAlertAction(title: Constants.openCamera, style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
@@ -54,17 +54,17 @@ class MediaPicker: NSObject {
         optionMenu.addAction(libraryAction)
         optionMenu.addAction(cancelAction)
         UIWindow.keyWindow?.rootViewController?.present(optionMenu, animated: true, completion: nil)
-    }
+    }*/
     
-    func checkAuthorizationAndOpenPicker(with type: UIImagePickerController.SourceType) {
+    func checkAuthorizationAndOpenPicker(with type: UIImagePickerController.SourceType, on vc: UIViewController) {
         if type == .camera {
             self.checkAVPermission { [weak self] (finish) in
                 DispatchQueue.main.async { [weak self] in
                     if finish {
-                        self?.openPicker(with: type)
+                        self?.openPicker(with: type, on: vc)
                     }else {
                         //show open setting Alert
-                        self?.showSettingAlert()
+                        self?.showSettingAlertOn(vc: vc)
                     }
                 }
             }
@@ -72,17 +72,17 @@ class MediaPicker: NSObject {
             self.checkPhotoLibraryPermission { [weak self] (finish) in
                 DispatchQueue.main.async { [weak self] in
                     if finish {
-                        self?.openPicker(with: type)
+                        self?.openPicker(with: type, on: vc)
                     }else {
                         //show open setting Alert
-                        self?.showSettingAlert()
+                        self?.showSettingAlertOn(vc: vc)
                     }
                 }
             }
         }
     }
     
-    private func openPicker(with sourceType: UIImagePickerController.SourceType) {
+    private func openPicker(with sourceType: UIImagePickerController.SourceType, on vc: UIViewController) {
         DispatchQueue.main.async {
             self.picker = UIImagePickerController()
             var sourceType = sourceType
@@ -98,7 +98,7 @@ class MediaPicker: NSObject {
             }else {
                 self.picker.mediaTypes = [UTType.image.identifier, UTType.movie.identifier]
             }
-            UIWindow.keyWindow?.rootViewController?.present(self.picker, animated: true, completion: nil)
+            vc.present(self.picker, animated: true, completion: nil)
         }
     }
     
@@ -189,15 +189,28 @@ extension MediaPicker: UIImagePickerControllerDelegate, UINavigationControllerDe
 
 // MARK: - ALERT
 extension MediaPicker {
-    func showSettingAlert() {
+    func showSettingAlertOn(vc: UIViewController) {
         let alert = UIAlertController(title: Constants.alert, message: Constants.permissionMessage, preferredStyle: .alert)
-        let settingButton = UIAlertAction(title: Constants.setting, style: .default) { (action) in
+        let settingButton = UIAlertAction(title: Constants.setting, style: .default) { [weak self] (action) in
             //open setting
-            UIApplication.shared.open(URL.init(string: UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
+            self?.openSettings(vc: vc)
         }
         let cancelButton = UIAlertAction(title: Constants.cancel, style: .default, handler: nil)
         alert.addAction(settingButton)
         alert.addAction(cancelButton)
-        UIWindow.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
+        vc.present(alert, animated: true, completion: nil)
+    }
+    
+    private func openSettings(vc: UIViewController) {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+        let selectorOpenURL = NSSelectorFromString("openURL:")
+        var responder: UIResponder? = vc
+        while let r = responder {
+            if r.canPerformAction(selectorOpenURL, withSender: nil) {
+                 r.perform(selectorOpenURL, with: url, afterDelay: 0.01)
+                 break
+            }
+            responder = r.next
+        }
     }
 }

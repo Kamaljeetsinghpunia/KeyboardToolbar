@@ -7,11 +7,16 @@
 
 import UIKit
 import Photos
+import KeyboardKit
 
 protocol CustomToolbarViewDelegates: AnyObject {
     func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, image: UIImage?, imageName: String?)
     func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, videoUrl: URL?, videoName: String?, thumbnail: UIImage?)
     func toolbarView(_ view: CustomToolbarView, askFor permissions: Bool)
+}
+
+protocol CustomToolbarViewHeightDelegates: AnyObject {
+    func toolbarView(_ view: CustomToolbarView, updateHeight: CGFloat)
 }
 
 class CustomToolbarView: UIView {
@@ -25,9 +30,12 @@ class CustomToolbarView: UIView {
     private var photoLibrary = PhotoService()
     private let cellId = "CustomToolbarViewCell"
     weak var delegate: CustomToolbarViewDelegates?
+    weak var heightDelegate: CustomToolbarViewHeightDelegates?
     private var latestPhotoAssetsFetched: PHFetchResult<PHAsset>? = nil
-    var textField: UITextField?
+//    var textField: UITextField?
     private var enableCameraButton = false
+    private let handler = ViewController()
+    var textInputProxy: UITextDocumentProxy?
     
     // MARK: - View life cycle
     override func draw(_ rect: CGRect) {
@@ -56,9 +64,10 @@ class CustomToolbarView: UIView {
     // MARK: - Internal function
     func showImages() {
         self.collectionView.isHidden = false
-        self.collectionHeightConstraint.constant = 80
-        self.textField?.reloadInputViews()
+        self.collectionHeightConstraint.constant = AppConstants.imagesCollectionViewHeight
+//        self.textField?.reloadInputViews()
         self.layoutIfNeeded()
+        self.heightDelegate?.toolbarView(self, updateHeight: AppConstants.keyboardHeight + AppConstants.openToolbarHeight)
     }
     
     func enableCameraButton(enable: Bool) {
@@ -84,6 +93,7 @@ class CustomToolbarView: UIView {
         self.collectionView.isHidden = true
         self.collectionHeightConstraint.constant = 0
         self.layoutIfNeeded()
+        self.handler.initialize(customToolbar: self, parentVC: self.parentViewController)
     }
 
     private func setupCollectionView() {
@@ -170,7 +180,15 @@ class CustomToolbarView: UIView {
     
     private func openWebsite() {
         guard let url = URL(string: AppConstants.websiteLink) else { return }
-        UIApplication.shared.open(url)
+        let selectorOpenURL = NSSelectorFromString("openURL:")
+        var responder: UIResponder? = self
+        while let r = responder {
+            if r.canPerformAction(selectorOpenURL, withSender: nil) {
+                 r.perform(selectorOpenURL, with: url, afterDelay: 0.01)
+                 break
+            }
+            responder = r.next
+        }
     }
 }
 
@@ -178,29 +196,29 @@ class CustomToolbarView: UIView {
 extension CustomToolbarView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ((self.latestPhotoAssetsFetched?.count ?? 0) + 2)
+        return ((self.latestPhotoAssetsFetched?.count ?? 0) + 1)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellId, for: indexPath) as! CustomToolbarViewCell
         
-        if indexPath.item == 0 {
+        /*if indexPath.item == 0 {
             let image = UIImage(named: "cameraIcon")!
             cell.setupCellWith(image: image, border: true, isVideo: false)
             return cell
-        }else if indexPath.item == (self.latestPhotoAssetsFetched?.count ?? 0) + 1 {
+        }else */if indexPath.item == (self.latestPhotoAssetsFetched?.count ?? 0) {
             //last index
             let image = UIImage(named: "galleryIcon")!
             cell.setupCellWith(image: image, border: true, isVideo: false)
             return cell
         }
-        let (identifier, isVideo) = self.getAssetInfo(at: indexPath.item - 1)
+        let (identifier, isVideo) = self.getAssetInfo(at: indexPath.item)
         guard let identifier = identifier else {
             return cell
         }
         cell.representedAssetIdentifier = identifier
         
-        self.getThumbnail(at: indexPath.item - 1, for: cell.imageView.frame.size, completion: { image in
+        self.getThumbnail(at: indexPath.item, for: cell.imageView.frame.size, completion: { image in
             if cell.representedAssetIdentifier == identifier,
                let thumbnail = image {
                 cell.setupCellWith(image: thumbnail, isVideo: isVideo)
@@ -215,19 +233,19 @@ extension CustomToolbarView: UICollectionViewDataSource {
 extension CustomToolbarView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let isLastIndex = indexPath.item == (self.latestPhotoAssetsFetched?.count ?? 0) + 1
-        if indexPath.item == 0 || isLastIndex {
+        let isLastIndex = indexPath.item == (self.latestPhotoAssetsFetched?.count ?? 0)
+        if isLastIndex {
             self.delegate?.toolbarView(self, didSelectItemAt: indexPath, image: nil, imageName: nil)
             return
         }
         
         if let cell = collectionView.cellForItem(at: indexPath) as? CustomToolbarViewCell {
             if cell.isVideo {
-                self.getVideo(at: indexPath.item - 1) { videoURL, fileName in
+                self.getVideo(at: indexPath.item) { videoURL, fileName in
                     self.delegate?.toolbarView(self, didSelectItemAt: indexPath, videoUrl: videoURL, videoName: fileName, thumbnail: videoURL?.imageThumbnail())
                 }
             }else {
-                self.getOriginalImage(at: indexPath.item - 1) { image, fileName in
+                self.getOriginalImage(at: indexPath.item) { image, fileName in
                     self.delegate?.toolbarView(self, didSelectItemAt: indexPath, image: image, imageName: fileName)
                 }
             }

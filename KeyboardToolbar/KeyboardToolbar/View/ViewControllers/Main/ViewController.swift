@@ -17,16 +17,29 @@ class ViewController: UIViewController {
     private lazy var photoLibrary = PhotoService()
     private let viewModel = ViewControllerVM()
     private var customToolbar: CustomToolbarView?
+    private var parentVC: UIViewController?
     
     // MARK: - View life cycle
-    override func viewDidLoad() {
+    /*override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupToolbar()
-        self.checkGalleryPermissions()
+//        self.setupToolbar()
+//        self.checkGalleryPermissions()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.textField.becomeFirstResponder()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.textField.resignFirstResponder()
+    }*/
+    
+    func initialize(customToolbar: CustomToolbarView?, parentVC: UIViewController?) {
+        self.customToolbar = customToolbar
+        self.parentVC = parentVC
+        self.customToolbar?.delegate = self
+        self.checkGalleryPermissions()
     }
 
     // MARK: - Private functions
@@ -38,13 +51,15 @@ class ViewController: UIViewController {
                     self?.customToolbar?.enableCameraButton(enable: true)
                 }else {
                     //show open setting Alert
-                    MediaPicker.shared.showSettingAlert()
+                    if let vc = self?.parentVC {
+                        MediaPicker.shared.showSettingAlertOn(vc: vc)
+                    }
                 }
             }
         }
     }
     
-    private func setupToolbar() {
+    /*private func setupToolbar() {
         self.customToolbar = .loadFromNib()
         self.customToolbar?.delegate = self
         self.customToolbar?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 40)
@@ -52,24 +67,22 @@ class ViewController: UIViewController {
         self.customToolbar?.textField = self.textField
         self.textField.inputAccessoryView?.autoresizingMask = .flexibleHeight
         self.textField.inputAccessoryView = self.customToolbar
-    }
+    }*/
     
-    private func showImagePicker() {
-        MediaPicker.shared.setupPicker(delegate: self, allowVideoSelectionOnly: false)
-        MediaPicker.shared.openActionSheetForImagePicker()
-    }
 }
 
 // MARK: - CustomToolbarViewDelegates
 extension ViewController: CustomToolbarViewDelegates {
     
     func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, image: UIImage?, imageName: String?) {
-        if indexPath.item == 0 {
+        /*if indexPath.item == 0 {
             //First index for open the camera
-            MediaPicker.shared.checkAuthorizationAndOpenPicker(with: .camera)
-        }else if indexPath.item == (AppConstants.totalImagesCount + 1) {
+            MediaPicker.shared.checkAuthorizationAndOpenPicker(with: .camera, on: self)
+        }else */if indexPath.item == (AppConstants.totalImagesCount) {
             //Last index for open the gallery
-            MediaPicker.shared.checkAuthorizationAndOpenPicker(with: .photoLibrary)
+            if let vc = self.parentVC {
+                MediaPicker.shared.checkAuthorizationAndOpenPicker(with: .photoLibrary, on: vc)
+            }
         }else {
             self.viewModel.requestModel.selectedImage = image
             self.viewModel.requestModel.fileName = imageName
@@ -119,15 +132,18 @@ extension ViewController {
             guard let `self` = self else {
                 return
             }
-            CustomLoader.shared.show()
-            self.textField.resignFirstResponder()
+            if let vc = self.parentVC {
+                CustomLoader.shared.showOn(vc: vc)
+            }
+//            self.textField.resignFirstResponder()
             self.viewModel.uploadFile { [weak self] result in
                 CustomLoader.shared.hide()
                 guard let `self` = self else {
                     return
                 }
-                self.textField.becomeFirstResponder()
-                self.textField.text = self.viewModel.imageUrl
+//                self.textField.becomeFirstResponder()
+//                self.textField.text = self.viewModel.imageUrl
+                self.customToolbar?.textInputProxy?.insertText(self.viewModel.imageUrl ?? "")
                 self.customToolbar?.showSelectedImage(self.viewModel.requestModel.selectedImage)
             }
         }

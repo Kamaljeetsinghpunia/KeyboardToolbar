@@ -1,0 +1,6 @@
+framework module Pods_Nostr_Image_Board {
+  umbrella header "Pods-Nostr Image Board-umbrella.h"
+
+  export *
+  module * { export * }
+}
