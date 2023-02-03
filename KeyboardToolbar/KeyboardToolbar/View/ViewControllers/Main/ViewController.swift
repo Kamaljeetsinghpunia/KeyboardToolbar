@@ -142,8 +142,14 @@ extension ViewController {
                 }
 //                self.textField.becomeFirstResponder()
 //                self.textField.text = self.viewModel.imageUrl
-                self.customToolbar?.textInputProxy?.insertText(self.viewModel.imageUrl ?? "")
-                self.customToolbar?.showSelectedImage(self.viewModel.requestModel.selectedImage)
+                switch result {
+                    
+                case .success(_):
+                    self.customToolbar?.textInputProxy?.insertText(self.viewModel.imageUrl ?? "")
+                    self.customToolbar?.showSelectedImage(self.viewModel.requestModel.selectedImage)
+                case .failure(_):
+                    self.customToolbar?.hideSelectedImageView()
+                }
             }
         }
     }
