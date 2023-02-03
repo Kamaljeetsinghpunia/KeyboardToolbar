@@ -18,7 +18,7 @@ fileprivate struct Constants {
 }
 
 @objc protocol MediaPickerDelegate {
-    @objc optional func mediaPicker(_ mediaPicker: MediaPicker, didChooseImage image: UIImage?, imageName: String?)
+    @objc optional func mediaPicker(_ mediaPicker: MediaPicker, didChooseImage image: UIImage?, url: URL?, imageName: String?)
     @objc optional func mediaPicker(_ mediaPicker: MediaPicker, didChooseVideo url: URL?, videoName: String?, thumbnail: UIImage?)
     @objc optional func mediaPickerDidCancel(_ mediaPicker: MediaPicker)
 }
@@ -169,8 +169,13 @@ extension MediaPicker: UIImagePickerControllerDelegate, UINavigationControllerDe
 
             if mediaType  == (UTType.image.identifier) {
                 let key: UIImagePickerController.InfoKey = self.allowEditing ? .editedImage: .originalImage
-                let image = info[key] as? UIImage
-                self.delegate?.mediaPicker?(self, didChooseImage: image, imageName: fileName)
+                var image = info[key] as? UIImage
+                if let data = image?.jpegData(compressionQuality: 0.3),
+                   let thumbnail = UIImage(data: data) {
+                    image = thumbnail
+                }
+                let imgUrl = info[UIImagePickerController.InfoKey.imageURL] as? URL
+                self.delegate?.mediaPicker?(self, didChooseImage: image, url: imgUrl, imageName: fileName)
             }
 
             if mediaType == (UTType.movie.identifier) {

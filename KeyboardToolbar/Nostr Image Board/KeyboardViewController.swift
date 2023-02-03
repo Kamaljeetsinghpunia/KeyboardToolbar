@@ -25,13 +25,17 @@ class KeyboardViewController: KeyboardInputViewController {
                 return
             }
             
-            self.setup(with: NIBKeyboardView(textInputProxy: self.textDocumentProxy, heightDelegate: self))
+            self.setup(with: NIBKeyboardView(textInputProxy: self.textDocumentProxy, heightDelegate: self, hasFullAccess: self.hasFullAccess, responder: self))
         })
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.updateHeightConstraint(height: AppConstants.keyboardHeight + AppConstants.closedToolbarHeight)
+        var height = AppConstants.keyboardHeight + AppConstants.closedToolbarHeight
+        if !self.hasFullAccess {
+            height = AppConstants.keyboardHeight + AppConstants.allowAccessHeight
+        }
+        self.updateHeightConstraint(height: height)
     }
     
     override func viewDidLayoutSubviews() {

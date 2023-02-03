@@ -14,11 +14,37 @@ struct NIBKeyboardView: View {
     private var keyboardContext: KeyboardContext
     var textInputProxy: UITextDocumentProxy
     var heightDelegate: CustomToolbarViewHeightDelegates
+    var hasFullAccess: Bool
+    var responder: UIViewController?
     
     var body: some View {
         VStack(spacing: 0) {
-            NibKeyboard(textInputProxy: self.textInputProxy, heightDelegate: self.heightDelegate)
+            if !self.hasFullAccess {
+                VStack {
+                    Button("Enable \"Full Access\" to send Images") {
+                        self.openSettings()
+                    }.foregroundColor(Color.white)
+                }
+                .padding(.top, 15)
+                .padding(.bottom, 10)
+            }else {
+                NibKeyboard(textInputProxy: self.textInputProxy, heightDelegate: self.heightDelegate)
+            }
             SystemKeyboard()
+        }
+    }
+    
+    private func openSettings() {
+        
+        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+        let selectorOpenURL = NSSelectorFromString("openURL:")
+        var responder: UIResponder? = self.responder
+        while let r = responder {
+            if r.canPerformAction(selectorOpenURL, withSender: nil) {
+                 r.perform(selectorOpenURL, with: url, afterDelay: 0.01)
+                 break
+            }
+            responder = r.next
         }
     }
 }

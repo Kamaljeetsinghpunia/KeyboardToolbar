@@ -10,7 +10,7 @@ import Photos
 import KeyboardKit
 
 protocol CustomToolbarViewDelegates: AnyObject {
-    func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, image: UIImage?, imageName: String?)
+    func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, image: UIImage?, imageName: String?, url: URL?)
     func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, videoUrl: URL?, videoName: String?, thumbnail: UIImage?)
     func toolbarView(_ view: CustomToolbarView, askFor permissions: Bool)
 }
@@ -25,17 +25,19 @@ class CustomToolbarView: UIView {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var collectionHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var selectedImageView: UIImageView!
+    @IBOutlet weak var allowAccessLabel: UILabel!
     
     // MARK: - Variables
     private var photoLibrary = PhotoService()
     private let cellId = "CustomToolbarViewCell"
-    weak var delegate: CustomToolbarViewDelegates?
+//    weak var delegate: CustomToolbarViewDelegates?
     weak var heightDelegate: CustomToolbarViewHeightDelegates?
     private var latestPhotoAssetsFetched: PHFetchResult<PHAsset>? = nil
 //    var textField: UITextField?
     private var enableCameraButton = false
     private let handler = ViewController()
     var textInputProxy: UITextDocumentProxy?
+    private var isInitialized: Bool = false
     
     // MARK: - View life cycle
     override func draw(_ rect: CGRect) {
@@ -53,7 +55,7 @@ class CustomToolbarView: UIView {
             self.hideSelectedImageView()
             self.showImages()
         }else {
-            self.delegate?.toolbarView(self, askFor: true)
+            self.handler.toolbarView(self, askFor: true)
         }
     }
     
@@ -72,6 +74,7 @@ class CustomToolbarView: UIView {
     
     func enableCameraButton(enable: Bool) {
         self.enableCameraButton = enable
+        self.allowAccessLabel.isHidden = enable
         if enable {
             self.getPhotos()
         }
@@ -89,11 +92,14 @@ class CustomToolbarView: UIView {
     
     // MARK: - Private functions
     private func initialize() {
-        self.setupCollectionView()
-        self.collectionView.isHidden = true
-        self.collectionHeightConstraint.constant = 0
-        self.layoutIfNeeded()
-        self.handler.initialize(customToolbar: self, parentVC: self.parentViewController)
+        if !self.isInitialized {
+            self.setupCollectionView()
+            self.collectionView.isHidden = true
+            self.collectionHeightConstraint.constant = 0
+            self.layoutIfNeeded()
+            self.handler.initialize(customToolbar: self, parentVC: self.parentViewController)
+            self.isInitialized = true
+        }
     }
 
     private func setupCollectionView() {
@@ -133,7 +139,7 @@ class CustomToolbarView: UIView {
             }
     }
     
-    private func getOriginalImage(at index: Int, completion: @escaping (UIImage?, String?) -> ()) {
+    private func getOriginalImageURL(at index: Int, completion: @escaping (String?, URL?) -> ()) {
         
         guard let asset = self.latestPhotoAssetsFetched?[index] else {
             completion(nil, nil)
@@ -144,16 +150,20 @@ class CustomToolbarView: UIView {
         options.deliveryMode = .highQualityFormat
         options.resizeMode = .exact
         
-        PHImageManager.default().requestImage(for: asset,
-                                              targetSize: PHImageManagerMaximumSize,
-                                              contentMode: .default,
-                                              options: options) { (image, metaData) in
+        asset.requestContentEditingInput(with: PHContentEditingInputRequestOptions()) { input, info in
             
-            let assetResources = PHAssetResource.assetResources(for: asset)
-            let fileName = assetResources.first?.originalFilename
-            
-            completion(image, fileName)
+            let url = input?.fullSizeImageURL
+            let fileName = url?.lastPathComponent
+            completion(fileName, url)
         }
+//        PHImageManager.default().requestImageDataAndOrientation(for: asset, options: options) { data, dataUti, orientation, info in
+//            let assetResources = PHAssetResource.assetResources(for: asset)
+//            let fileName = assetResources.first?.originalFilename
+//            print(info)
+//            let url = info?["PHImageFileURLKey"] as? URL
+//            completion(fileName, url)
+//        }
+        
     }
     
     private func getVideo(at index: Int, completion: @escaping (URL?, String?) -> ()) {
@@ -235,18 +245,18 @@ extension CustomToolbarView: UICollectionViewDelegate {
         
         let isLastIndex = indexPath.item == (self.latestPhotoAssetsFetched?.count ?? 0)
         if isLastIndex {
-            self.delegate?.toolbarView(self, didSelectItemAt: indexPath, image: nil, imageName: nil)
+            self.handler.toolbarView(self, didSelectItemAt: indexPath, image: nil, imageName: nil, url: nil)
             return
         }
         
         if let cell = collectionView.cellForItem(at: indexPath) as? CustomToolbarViewCell {
             if cell.isVideo {
                 self.getVideo(at: indexPath.item) { videoURL, fileName in
-                    self.delegate?.toolbarView(self, didSelectItemAt: indexPath, videoUrl: videoURL, videoName: fileName, thumbnail: videoURL?.imageThumbnail())
+                    self.handler.toolbarView(self, didSelectItemAt: indexPath, videoUrl: videoURL, videoName: fileName, thumbnail: videoURL?.imageThumbnail())
                 }
             }else {
-                self.getOriginalImage(at: indexPath.item) { image, fileName in
-                    self.delegate?.toolbarView(self, didSelectItemAt: indexPath, image: image, imageName: fileName)
+                self.getOriginalImageURL(at: indexPath.item) { fileName, url in
+                    self.handler.toolbarView(self, didSelectItemAt: indexPath, image: cell.imageView.image, imageName: fileName, url: url)
                 }
             }
         }

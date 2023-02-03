@@ -17,10 +17,9 @@ class ViewControllerVM: NSObject {
     func uploadFile(completion: @escaping ApiResponseCompletion) {
         
         let multipartModel = self.requestModel.multipartModel
-        let uploadType: MultipartUploadType = self.requestModel.mimeType == .image ? .data : .url
         
         ///Calling api service method
-        self.apiServices.uploadFile([:], multipartModelArray: multipartModel, uploadType: uploadType) { [weak self] (result) in
+        self.apiServices.uploadFile([:], multipartModelArray: multipartModel, uploadType: .url) { [weak self] (result) in
             switch result {
             case .success(let response):
                 guard let url = response.resultData as? String else {

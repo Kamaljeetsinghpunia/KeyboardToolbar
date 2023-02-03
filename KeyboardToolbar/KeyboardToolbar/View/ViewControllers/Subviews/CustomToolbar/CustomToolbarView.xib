@@ -62,12 +62,21 @@
                                 <action selector="logoButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="ksz-0y-AwR"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow Photos access from settings to send Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="TwW-zz-gy6">
+                            <rect key="frame" x="43" y="12.333333333333329" width="409" height="15.666666666666664"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.041763861594636728" green="0.010020273280699989" blue="0.11730587121212122" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="1lM-cB-jSz" secondAttribute="trailing" constant="5" id="0Ir-ZC-HcA"/>
+                        <constraint firstItem="TwW-zz-gy6" firstAttribute="centerY" secondItem="9dB-b3-gnp" secondAttribute="centerY" id="4EV-5p-5t3"/>
+                        <constraint firstItem="1lM-cB-jSz" firstAttribute="leading" secondItem="TwW-zz-gy6" secondAttribute="trailing" constant="5" id="4cv-V9-WaO"/>
                         <constraint firstItem="1lM-cB-jSz" firstAttribute="top" secondItem="Ll7-3j-fXF" secondAttribute="top" constant="5" id="4vk-19-X92"/>
                         <constraint firstAttribute="height" constant="40" id="FDB-q3-ruF"/>
+                        <constraint firstItem="TwW-zz-gy6" firstAttribute="leading" secondItem="9dB-b3-gnp" secondAttribute="trailing" constant="5" id="JY7-6B-pXz"/>
                         <constraint firstItem="9dB-b3-gnp" firstAttribute="top" secondItem="Ll7-3j-fXF" secondAttribute="top" constant="2" id="O9R-du-wyS"/>
                         <constraint firstAttribute="bottom" secondItem="9dB-b3-gnp" secondAttribute="bottom" constant="2" id="QuO-PG-345"/>
                         <constraint firstAttribute="bottom" secondItem="1lM-cB-jSz" secondAttribute="bottom" constant="5" id="X5m-pU-BZO"/>
@@ -92,6 +101,7 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="allowAccessLabel" destination="TwW-zz-gy6" id="Bcg-4s-ALw"/>
                 <outlet property="collectionHeightConstraint" destination="Tog-iv-cZq" id="hu5-Bc-Oi9"/>
                 <outlet property="collectionView" destination="I41-1t-PV1" id="S2u-Yv-dp2"/>
                 <outlet property="selectedImageView" destination="1es-Ch-1DX" id="IV8-pJ-20h"/>

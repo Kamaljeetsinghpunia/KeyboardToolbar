@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     func initialize(customToolbar: CustomToolbarView?, parentVC: UIViewController?) {
         self.customToolbar = customToolbar
         self.parentVC = parentVC
-        self.customToolbar?.delegate = self
+//        self.customToolbar?.delegate = self
         self.checkGalleryPermissions()
     }
 
@@ -50,10 +50,7 @@ class ViewController: UIViewController {
                 if finish {
                     self?.customToolbar?.enableCameraButton(enable: true)
                 }else {
-                    //show open setting Alert
-                    if let vc = self?.parentVC {
-                        MediaPicker.shared.showSettingAlertOn(vc: vc)
-                    }
+                    self?.customToolbar?.enableCameraButton(enable: false)
                 }
             }
         }
@@ -74,7 +71,7 @@ class ViewController: UIViewController {
 // MARK: - CustomToolbarViewDelegates
 extension ViewController: CustomToolbarViewDelegates {
     
-    func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, image: UIImage?, imageName: String?) {
+    func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, image: UIImage?, imageName: String?, url: URL?) {
         /*if indexPath.item == 0 {
             //First index for open the camera
             MediaPicker.shared.checkAuthorizationAndOpenPicker(with: .camera, on: self)
@@ -85,6 +82,7 @@ extension ViewController: CustomToolbarViewDelegates {
             }
         }else {
             self.viewModel.requestModel.selectedImage = image
+            self.viewModel.requestModel.fileUrl = url
             self.viewModel.requestModel.fileName = imageName
             self.viewModel.requestModel.mimeType = .image
             self.uploadFile()
@@ -92,7 +90,7 @@ extension ViewController: CustomToolbarViewDelegates {
     }
     
     func toolbarView(_ view: CustomToolbarView, didSelectItemAt indexPath: IndexPath, videoUrl: URL?, videoName: String?, thumbnail: UIImage?) {
-        self.viewModel.requestModel.videoUrl = videoUrl
+        self.viewModel.requestModel.fileUrl = videoUrl
         self.viewModel.requestModel.selectedImage = thumbnail
         self.viewModel.requestModel.fileName = videoName
         self.viewModel.requestModel.mimeType = .video
@@ -109,8 +107,9 @@ extension ViewController: CustomToolbarViewDelegates {
 
 // MARK: - MediaPickerDelegate
 extension ViewController: MediaPickerDelegate {
-    func mediaPicker(_ mediaPicker: MediaPicker, didChooseImage image: UIImage?, imageName: String?) {
+    func mediaPicker(_ mediaPicker: MediaPicker, didChooseImage image: UIImage?, url: URL?, imageName: String?) {
         self.viewModel.requestModel.selectedImage = image
+        self.viewModel.requestModel.fileUrl = url
         self.viewModel.requestModel.fileName = imageName
         self.viewModel.requestModel.mimeType = .image
         self.uploadFile()
@@ -118,7 +117,7 @@ extension ViewController: MediaPickerDelegate {
     
     func mediaPicker(_ mediaPicker: MediaPicker, didChooseVideo url: URL?, videoName: String?, thumbnail: UIImage?) {
         self.viewModel.requestModel.selectedImage = thumbnail
-        self.viewModel.requestModel.videoUrl = url
+        self.viewModel.requestModel.fileUrl = url
         self.viewModel.requestModel.fileName = videoName
         self.viewModel.requestModel.mimeType = .video
         self.uploadFile()
