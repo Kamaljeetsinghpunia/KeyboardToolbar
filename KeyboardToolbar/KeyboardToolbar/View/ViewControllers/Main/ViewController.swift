@@ -141,7 +141,10 @@ extension ViewController {
                 switch result {
                     
                 case .success(_):
-                    self.customToolbar?.textInputProxy?.insertText(self.viewModel.imageUrl ?? "")
+                    if let url = self.viewModel.imageUrl,
+                       !url.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                        self.customToolbar?.textInputProxy?.insertText(url + "\n")
+                    }
                     self.customToolbar?.showSelectedImage(self.viewModel.requestModel.selectedImage)
                 case .failure(_):
                     self.customToolbar?.hideSelectedImageView()

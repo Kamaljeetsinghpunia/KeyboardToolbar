@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "toolbarView(_:didSelectItemAt:image:imageName:data:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -49,70 +49,6 @@
             startingLineNumber = "255"
             endingLineNumber = "255"
             landmarkName = "multipartRequestForJsonResponse(path:resource:modelArray:uploadType:completionBlock:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3D4D90E0-D940-4EAE-8819-334D2E2944BC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KeyboardToolbar/View/ViewControllers/Subviews/CustomToolbar/CustomToolbarView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "getOriginalImageURL(at:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "3D4D90E0-D940-4EAE-8819-334D2E2944BC - a3d6d592928ecbd2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Nostr_Image_Board.CustomToolbarView.getOriginalImageURL(at: Swift.Int, completion: (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Nostr Image Board"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kamalpunia/Documents/GitHub/KeyboardToolbar/KeyboardToolbar/KeyboardToolbar/View/ViewControllers/Subviews/CustomToolbar/CustomToolbarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "174"
-                  endingLineNumber = "174"
-                  offsetFromSymbolStart = "380">
-               </Location>
-               <Location
-                  uuid = "3D4D90E0-D940-4EAE-8819-334D2E2944BC - 6d5394f4800a72e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.PHContentEditingInput&gt;, Swift.Dictionary&lt;Swift.AnyHashable, Any&gt;) -&gt; () in Nostr_Image_Board.CustomToolbarView.getOriginalImageURL(at: Swift.Int, completion: (Swift.Optional&lt;Swift.String&gt;, Swift.Optional&lt;Foundation.URL&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Nostr Image Board"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kamalpunia/Documents/GitHub/KeyboardToolbar/KeyboardToolbar/KeyboardToolbar/View/ViewControllers/Subviews/CustomToolbar/CustomToolbarView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "176"
-                  endingLineNumber = "176"
-                  offsetFromSymbolStart = "336">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "6DAB1150-DB07-4A61-AC9D-C975E943A9D5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "KeyboardToolbar/View/ViewControllers/Subviews/CustomToolbar/CustomToolbarView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
-            landmarkName = "getOriginalImageURL(at:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
