@@ -26,6 +26,8 @@ class CustomToolbarView: UIView {
     @IBOutlet weak var collectionHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var selectedImageView: UIImageView!
     @IBOutlet weak var allowAccessLabel: UILabel!
+    @IBOutlet weak var loaderView: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Variables
     private var photoLibrary = PhotoService()
@@ -64,6 +66,15 @@ class CustomToolbarView: UIView {
     }
     
     // MARK: - Internal function
+    func showLoader(show: Bool) {
+        self.loaderView.isHidden = !show
+        if show {
+            self.activityIndicator.startAnimating()
+        }else {
+            self.activityIndicator.stopAnimating()
+        }
+    }
+    
     func showImages() {
         self.collectionView.isHidden = false
         self.collectionHeightConstraint.constant = AppConstants.imagesCollectionViewHeight
@@ -93,6 +104,7 @@ class CustomToolbarView: UIView {
     // MARK: - Private functions
     private func initialize() {
         if !self.isInitialized {
+            self.showLoader(show: false)
             self.setupCollectionView()
             self.collectionView.isHidden = true
             self.collectionHeightConstraint.constant = 0
@@ -110,8 +122,12 @@ class CustomToolbarView: UIView {
     }
     
     private func getPhotos() {
-        self.latestPhotoAssetsFetched = self.photoLibrary.fetchLatestPhotos(forCount: AppConstants.totalImagesCount)
-        self.collectionView.reloadData()
+        DispatchQueue.global().async { [weak self] in
+            self?.latestPhotoAssetsFetched = self?.photoLibrary.fetchLatestPhotos(forCount: AppConstants.totalImagesCount)
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+            }
+        }
     }
     
     private func getAssetInfo(at index: Int) -> (String?, Bool) {
@@ -135,7 +151,12 @@ class CustomToolbarView: UIView {
                                            targetSize: size,
                                           contentMode: .aspectFill,
                                               options: nil) { (image, _) in
-                completion(image)
+                if let data = image?.jpegData(compressionQuality: 0.5),
+                   let compressedImage = UIImage(data: data) {
+                    completion(compressedImage)
+                }else {
+                    completion(image)
+                }
             }
     }
     
@@ -251,11 +272,13 @@ extension CustomToolbarView: UICollectionViewDelegate {
         
         if let cell = collectionView.cellForItem(at: indexPath) as? CustomToolbarViewCell {
             if cell.isVideo {
-                self.getVideo(at: indexPath.item) { videoURL, fileName in
+                self.getVideo(at: indexPath.item) { [weak self] videoURL, fileName in
+                    guard let `self` = self else {return}
                     self.handler.toolbarView(self, didSelectItemAt: indexPath, videoUrl: videoURL, videoName: fileName, thumbnail: videoURL?.imageThumbnail())
                 }
             }else {
-                self.getOriginalImageURL(at: indexPath.item) { fileName, url in
+                self.getOriginalImageURL(at: indexPath.item) { [weak self] fileName, url in
+                    guard let `self` = self else {return}
                     self.handler.toolbarView(self, didSelectItemAt: indexPath, image: cell.imageView.image, imageName: fileName, url: url)
                 }
             }

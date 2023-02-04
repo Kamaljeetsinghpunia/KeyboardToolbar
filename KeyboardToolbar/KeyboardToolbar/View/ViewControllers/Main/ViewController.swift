@@ -131,17 +131,13 @@ extension ViewController {
             guard let `self` = self else {
                 return
             }
-            if let vc = self.parentVC {
-                CustomLoader.shared.showOn(vc: vc)
-            }
-//            self.textField.resignFirstResponder()
+            self.customToolbar?.showLoader(show: true)
+            
             self.viewModel.uploadFile { [weak self] result in
-                CustomLoader.shared.hide()
                 guard let `self` = self else {
                     return
                 }
-//                self.textField.becomeFirstResponder()
-//                self.textField.text = self.viewModel.imageUrl
+                self.customToolbar?.showLoader(show: false)
                 switch result {
                     
                 case .success(_):

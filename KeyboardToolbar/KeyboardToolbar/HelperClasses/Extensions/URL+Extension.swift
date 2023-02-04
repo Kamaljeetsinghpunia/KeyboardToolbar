@@ -18,7 +18,12 @@ extension URL {
         guard let cgImage = try? imageGenerator.copyCGImage(at: time, actualTime: &actualTime) else {
             return nil
         }
-        return UIImage(cgImage: cgImage)
+        let thumbnail = UIImage(cgImage: cgImage)
+        if let imageData = thumbnail.jpegData(compressionQuality: 0.2),
+           let compressedImage = UIImage(data: imageData) {
+            return compressedImage
+        }
+        return nil
     }
 }
 

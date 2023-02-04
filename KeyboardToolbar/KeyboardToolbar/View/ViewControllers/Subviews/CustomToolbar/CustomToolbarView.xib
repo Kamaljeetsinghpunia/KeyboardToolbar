@@ -83,27 +83,47 @@
                         <constraint firstItem="9dB-b3-gnp" firstAttribute="leading" secondItem="Ll7-3j-fXF" secondAttribute="leading" constant="2" id="zuC-EH-ZQQ"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shD-oz-ZIW">
+                    <rect key="frame" x="0.0" y="0.0" width="492" height="106"/>
+                    <subviews>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="JEH-rA-eYb">
+                            <rect key="frame" x="227.66666666666666" y="34.666666666666664" width="36.999999999999972" height="36.999999999999993"/>
+                            <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="JEH-rA-eYb" firstAttribute="centerY" secondItem="shD-oz-ZIW" secondAttribute="centerY" id="Eyz-Gf-HbY"/>
+                        <constraint firstItem="JEH-rA-eYb" firstAttribute="centerX" secondItem="shD-oz-ZIW" secondAttribute="centerX" id="nTn-0r-2LS"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
                 <constraint firstItem="Ll7-3j-fXF" firstAttribute="top" secondItem="I41-1t-PV1" secondAttribute="bottom" id="0Q0-Bk-ZLp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="shD-oz-ZIW" secondAttribute="trailing" id="IYv-W2-fwV"/>
                 <constraint firstItem="1es-Ch-1DX" firstAttribute="trailing" secondItem="I41-1t-PV1" secondAttribute="trailing" id="M3b-3z-dt2"/>
                 <constraint firstItem="1es-Ch-1DX" firstAttribute="bottom" secondItem="I41-1t-PV1" secondAttribute="bottom" id="QW2-Pd-hZz"/>
+                <constraint firstItem="shD-oz-ZIW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Y2H-c9-2wa"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Ll7-3j-fXF" secondAttribute="bottom" id="brU-ei-Szn"/>
                 <constraint firstItem="I41-1t-PV1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="eeW-lb-3Cd"/>
                 <constraint firstItem="Ll7-3j-fXF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ehu-4b-fPo"/>
                 <constraint firstItem="1es-Ch-1DX" firstAttribute="leading" secondItem="I41-1t-PV1" secondAttribute="leading" id="gnK-7A-Rag"/>
                 <constraint firstItem="I41-1t-PV1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hAL-DA-TZd"/>
+                <constraint firstItem="shD-oz-ZIW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mDm-S9-5qr"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Ll7-3j-fXF" secondAttribute="trailing" id="ouJ-nh-R3m"/>
                 <constraint firstItem="1es-Ch-1DX" firstAttribute="top" secondItem="I41-1t-PV1" secondAttribute="top" id="pP3-yd-0Zp"/>
                 <constraint firstItem="I41-1t-PV1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="veQ-8S-Dvd"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="shD-oz-ZIW" secondAttribute="bottom" id="zso-v2-mmX"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="activityIndicator" destination="JEH-rA-eYb" id="gzB-mN-nOZ"/>
                 <outlet property="allowAccessLabel" destination="TwW-zz-gy6" id="Bcg-4s-ALw"/>
                 <outlet property="collectionHeightConstraint" destination="Tog-iv-cZq" id="hu5-Bc-Oi9"/>
                 <outlet property="collectionView" destination="I41-1t-PV1" id="S2u-Yv-dp2"/>
+                <outlet property="loaderView" destination="shD-oz-ZIW" id="27O-IP-0FG"/>
                 <outlet property="selectedImageView" destination="1es-Ch-1DX" id="IV8-pJ-20h"/>
             </connections>
             <point key="canvasLocation" x="175.57251908396947" y="-156.33802816901408"/>

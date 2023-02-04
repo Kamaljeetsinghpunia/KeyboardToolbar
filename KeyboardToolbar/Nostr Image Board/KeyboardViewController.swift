@@ -20,13 +20,7 @@ class KeyboardViewController: KeyboardInputViewController {
     
     override func viewWillSetupKeyboard() {
         super.viewWillSetupKeyboard()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
-            guard let `self` = self else {
-                return
-            }
-            
-            self.setup(with: NIBKeyboardView(textInputProxy: self.textDocumentProxy, heightDelegate: self, hasFullAccess: self.hasFullAccess, responder: self))
-        })
+        self.setup(with: NIBKeyboardView(textInputProxy: self.textDocumentProxy, heightDelegate: self, hasFullAccess: self.hasFullAccess, responder: self))
     }
     
     override func viewDidLoad() {
@@ -36,6 +30,7 @@ class KeyboardViewController: KeyboardInputViewController {
             height = AppConstants.keyboardHeight + AppConstants.allowAccessHeight
         }
         self.updateHeightConstraint(height: height)
+        keyboardActionHandler = StandardKeyboardActionHandler(inputViewController: self)
     }
     
     override func viewDidLayoutSubviews() {
