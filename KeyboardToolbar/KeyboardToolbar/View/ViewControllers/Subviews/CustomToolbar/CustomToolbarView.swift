@@ -80,7 +80,7 @@ class CustomToolbarView: UIView {
         self.collectionHeightConstraint.constant = AppConstants.imagesCollectionViewHeight
 //        self.textField?.reloadInputViews()
         self.layoutIfNeeded()
-        self.heightDelegate?.toolbarView(self, updateHeight: AppConstants.keyboardHeight + AppConstants.openToolbarHeight)
+        self.heightDelegate?.toolbarView(self, updateHeight: AppConstants.keyboardHeight + AppConstants.openToolbarHeight + AppConstants.suggestionsToolbarHeight)
     }
     
     func enableCameraButton(enable: Bool) {

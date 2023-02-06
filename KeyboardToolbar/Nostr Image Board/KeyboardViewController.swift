@@ -25,12 +25,13 @@ class KeyboardViewController: KeyboardInputViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var height = AppConstants.keyboardHeight + AppConstants.closedToolbarHeight
+        var height = AppConstants.keyboardHeight + AppConstants.closedToolbarHeight + AppConstants.suggestionsToolbarHeight
         if !self.hasFullAccess {
             height = AppConstants.keyboardHeight + AppConstants.allowAccessHeight
         }
         self.updateHeightConstraint(height: height)
-        keyboardActionHandler = StandardKeyboardActionHandler(inputViewController: self)
+        self.autocompleteProvider = NIBAutocompleteProvider()
+        keyboardActionHandler = NIBKeyboardActionHandler(inputViewController: self)
     }
     
     override func viewDidLayoutSubviews() {

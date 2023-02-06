@@ -11,6 +11,8 @@ import KeyboardKit
 struct NIBKeyboardView: View {
     
     @EnvironmentObject
+    private var autocompleteContext: AutocompleteContext
+    @EnvironmentObject
     private var keyboardContext: KeyboardContext
     var textInputProxy: UITextDocumentProxy
     var heightDelegate: CustomToolbarViewHeightDelegates
@@ -29,6 +31,9 @@ struct NIBKeyboardView: View {
                 .padding(.bottom, 10)
             }else {
                 NibKeyboard(textInputProxy: self.textInputProxy, heightDelegate: self.heightDelegate)
+            }
+            if keyboardContext.keyboardType != .emojis {
+                autocompleteToolbar
             }
             SystemKeyboard()
         }
@@ -64,5 +69,15 @@ struct NibKeyboard: UIViewRepresentable {
     }
 
     func updateUIView(_ uiView: CustomToolbarView, context: Context) {
+    }
+}
+
+private extension NIBKeyboardView {
+
+    var autocompleteToolbar: some View {
+        AutocompleteToolbar(
+            suggestions: autocompleteContext.suggestions,
+            locale: keyboardContext.locale
+        ).opacity(keyboardContext.prefersAutocomplete ? 1 : 0)  // Still allocate height
     }
 }

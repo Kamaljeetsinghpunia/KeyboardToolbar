@@ -16,4 +16,5 @@ struct AppConstants {
     static let openToolbarHeight: CGFloat = 120
     static let imagesCollectionViewHeight: CGFloat = 80
     static let allowAccessHeight: CGFloat = 90
+    static let suggestionsToolbarHeight: CGFloat = 50
 }

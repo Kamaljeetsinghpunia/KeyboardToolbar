@@ -21,6 +21,8 @@
 		F1333ECE2982B26600E9789D /* CustomToolbarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333ECC2982B26600E9789D /* CustomToolbarViewCell.swift */; };
 		F1333ECF2982B26600E9789D /* CustomToolbarViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1333ECD2982B26600E9789D /* CustomToolbarViewCell.xib */; };
 		F1333ED12982BAB800E9789D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1333ED02982BAB800E9789D /* UIView+Extension.swift */; };
+		F16ADD5A2990CA7B0083A6A3 /* NIBAutocompleteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16ADD592990CA7B0083A6A3 /* NIBAutocompleteProvider.swift */; };
+		F16ADD5C2990DC7B0083A6A3 /* NIBKeyboardActionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16ADD5B2990DC7B0083A6A3 /* NIBKeyboardActionHandler.swift */; };
 		F16FD0F529839C29002DEB14 /* AtomicArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD0F429839C29002DEB14 /* AtomicArray.swift */; };
 		F16FD0F72983AD1E002DEB14 /* ViewControllerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD0F62983AD1E002DEB14 /* ViewControllerVM.swift */; };
 		F16FD1032983D308002DEB14 /* MediaPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16FD1022983D308002DEB14 /* MediaPicker.swift */; };
@@ -118,6 +120,8 @@
 		F1333ECC2982B26600E9789D /* CustomToolbarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToolbarViewCell.swift; sourceTree = "<group>"; };
 		F1333ECD2982B26600E9789D /* CustomToolbarViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomToolbarViewCell.xib; sourceTree = "<group>"; };
 		F1333ED02982BAB800E9789D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		F16ADD592990CA7B0083A6A3 /* NIBAutocompleteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBAutocompleteProvider.swift; sourceTree = "<group>"; };
+		F16ADD5B2990DC7B0083A6A3 /* NIBKeyboardActionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBKeyboardActionHandler.swift; sourceTree = "<group>"; };
 		F16FD0F429839C29002DEB14 /* AtomicArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtomicArray.swift; sourceTree = "<group>"; };
 		F16FD0F62983AD1E002DEB14 /* ViewControllerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerVM.swift; sourceTree = "<group>"; };
 		F16FD1022983D308002DEB14 /* MediaPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaPicker.swift; sourceTree = "<group>"; };
@@ -354,6 +358,8 @@
 			children = (
 				F1B9BFF2298A5CD6007B0913 /* KeyboardViewController.swift */,
 				F19F2C5D298A9D7100AE8B51 /* NIBKeyboardView.swift */,
+				F16ADD592990CA7B0083A6A3 /* NIBAutocompleteProvider.swift */,
+				F16ADD5B2990DC7B0083A6A3 /* NIBKeyboardActionHandler.swift */,
 				F1B9BFF4298A5CD6007B0913 /* Info.plist */,
 			);
 			path = "Nostr Image Board";
@@ -582,12 +588,14 @@
 				F19F2C5F298B8B2100AE8B51 /* CustomToolbarView.swift in Sources */,
 				F19F2C66298B8BFA00AE8B51 /* ApiServices.swift in Sources */,
 				F1B9BFF3298A5CD6007B0913 /* KeyboardViewController.swift in Sources */,
+				F16ADD5A2990CA7B0083A6A3 /* NIBAutocompleteProvider.swift in Sources */,
 				F19F2C6F298B8D1B00AE8B51 /* Date+Extension.swift in Sources */,
 				F19F2C63298B8B3500AE8B51 /* ViewControllerVM.swift in Sources */,
 				F19F2C5E298A9D7100AE8B51 /* NIBKeyboardView.swift in Sources */,
 				F19F2C6A298B8CF900AE8B51 /* APIResultValidator.swift in Sources */,
 				F19F2C67298B8C2800AE8B51 /* AlamofireNetworkManager.swift in Sources */,
 				F19F2C72298B8D9B00AE8B51 /* URL+Extension.swift in Sources */,
+				F16ADD5C2990DC7B0083A6A3 /* NIBKeyboardActionHandler.swift in Sources */,
 				F19F2C6B298B8D0000AE8B51 /* CustomLoader.swift in Sources */,
 				F19F2C61298B8B2C00AE8B51 /* CustomToolbarViewCell.swift in Sources */,
 				F19F2C69298B8CE800AE8B51 /* NetworkRequest.swift in Sources */,
